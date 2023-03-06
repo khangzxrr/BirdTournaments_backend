@@ -6,6 +6,7 @@ using BirdTournaments.Core.UserAggregate;
 using BirdTournaments.Core.ProjectAggregate;
 using BirdTournaments.Core.ContributorAggregate;
 using BirdTournaments.Core.BirdAggregate;
+using BirdTournaments.Core.BirdOwnerAggregate;
 
 namespace BirdTournaments.Infrastructure.Data;
 
@@ -25,8 +26,10 @@ public class AppDbContext : DbContext
   public DbSet<Contributor> Contributors => Set<Contributor>(); 
 
   public DbSet<User> Users => Set<User>();
-  public DbSet<Bird> Birds => Set<Bird>();
+  public DbSet<BirdOwner> BirdOwners => Set<BirdOwner>();
+  public DbSet<BirdType> BirdTypes => Set<BirdType>();
   public DbSet<Rank> Ranks => Set<Rank>();
+  public DbSet<Bird> Birds => Set<Bird>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

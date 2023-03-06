@@ -1,5 +1,6 @@
 ﻿
 using Ardalis.GuardClauses;
+using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.SharedKernel;
 using BirdTournaments.SharedKernel.Interfaces;
 
@@ -16,13 +17,19 @@ public class User : EntityBase, IAggregateRoot
 
   public UserRole Role { get; }
 
+  public BirdOwner BirdOwner { get; }
+
+  #pragma warning disable CS8618 // Required by Entity Framework
+  private User() { }
+
   public User(
     string userName,
     string email,
     string hash,
     string salt,
     UserVerify verify,
-    UserRole role
+    UserRole role,
+    BirdOwner birdOwner
     )
   {
     UserName = Guard.Against.NullOrEmpty(userName, nameof(userName));
@@ -33,6 +40,7 @@ public class User : EntityBase, IAggregateRoot
 
     Verify = verify;
     Role = role;
+    BirdOwner = birdOwner;
   }
 }
 

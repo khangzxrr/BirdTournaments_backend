@@ -30,6 +30,9 @@ namespace BirdTournaments.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("BirdOwnerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BirdTypeId")
                         .HasColumnType("int");
 
@@ -46,13 +49,12 @@ namespace BirdTournaments.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("OwnerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("RankId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BirdOwnerId");
 
                     b.HasIndex("BirdTypeId");
 
@@ -76,7 +78,7 @@ namespace BirdTournaments.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BirdType");
+                    b.ToTable("BirdTypes");
                 });
 
             modelBuilder.Entity("BirdTournaments.Core.BirdAggregate.Rank", b =>
@@ -98,6 +100,40 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ranks");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("BirdOwners");
                 });
 
             modelBuilder.Entity("BirdTournaments.Core.ContributorAggregate.Contributor", b =>
@@ -212,6 +248,10 @@ namespace BirdTournaments.Infrastructure.Migrations
 
             modelBuilder.Entity("BirdTournaments.Core.BirdAggregate.Bird", b =>
                 {
+                    b.HasOne("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", null)
+                        .WithMany("Birds")
+                        .HasForeignKey("BirdOwnerId");
+
                     b.HasOne("BirdTournaments.Core.BirdAggregate.BirdType", "BirdType")
                         .WithMany()
                         .HasForeignKey("BirdTypeId")
@@ -229,6 +269,17 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.Navigation("Rank");
                 });
 
+            modelBuilder.Entity("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", b =>
+                {
+                    b.HasOne("BirdTournaments.Core.UserAggregate.User", "User")
+                        .WithOne("BirdOwner")
+                        .HasForeignKey("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.ToDoItem", b =>
                 {
                     b.HasOne("BirdTournaments.Core.ProjectAggregate.Project", null)
@@ -236,9 +287,20 @@ namespace BirdTournaments.Infrastructure.Migrations
                         .HasForeignKey("ProjectId");
                 });
 
+            modelBuilder.Entity("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", b =>
+                {
+                    b.Navigation("Birds");
+                });
+
             modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.Project", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.UserAggregate.User", b =>
+                {
+                    b.Navigation("BirdOwner")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
