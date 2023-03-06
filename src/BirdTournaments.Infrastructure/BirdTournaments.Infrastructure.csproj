@@ -18,11 +18,11 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\OrderService.Core\BirdTournaments.Core.csproj" />
-    <ProjectReference Include="..\OrderService.SharedKernel\BirdTournaments.SharedKernel.csproj" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\BirdTournaments.Core\BirdTournaments.Core.csproj" />
+    <ProjectReference Include="..\BirdTournaments.SharedKernel\BirdTournaments.SharedKernel.csproj" />
   </ItemGroup>
 </Project>

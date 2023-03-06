@@ -29,11 +29,11 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\OrderService.Infrastructure\BirdTournaments.Infrastructure.csproj" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <ProjectReference Include="..\BirdTournaments.Infrastructure\BirdTournaments.Infrastructure.csproj" />
   </ItemGroup>
   
 </Project>

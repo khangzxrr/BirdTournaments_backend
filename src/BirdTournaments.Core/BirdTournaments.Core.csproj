@@ -17,15 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrderService.SharedKernel\BirdTournaments.SharedKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="UserAggregate\" />
     <None Remove="UserAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UserAggregate\" />
     <Folder Include="UserAggregate\Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BirdTournaments.SharedKernel\BirdTournaments.SharedKernel.csproj" />
   </ItemGroup>
 </Project>

@@ -21,10 +21,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <ProjectReference Include="..\..\src\OrderService.Infrastructure\BirdTournaments.Infrastructure.csproj" />
-    <ProjectReference Include="..\OrderService.UnitTests\BirdTournaments.UnitTests.csproj" />
+    <ProjectReference Include="..\..\src\BirdTournaments.Infrastructure\BirdTournaments.Infrastructure.csproj" />
+    <ProjectReference Include="..\BirdTournaments.UnitTests\BirdTournaments.UnitTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>
