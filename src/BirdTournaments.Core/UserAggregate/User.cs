@@ -26,7 +26,7 @@ public class User : EntityBase, IAggregateRoot
     )
   {
     UserName = Guard.Against.NullOrEmpty(userName, nameof(userName));
-    Email = Guard.Against.NullOrEmpty(email, nameof(email)).;
+    Email = Guard.Against.NullOrEmpty(email, nameof(email));
     Hash = Guard.Against.NullOrEmpty(hash, nameof(hash));
     Salt = Guard.Against.NullOrEmpty(salt, nameof(salt));
     

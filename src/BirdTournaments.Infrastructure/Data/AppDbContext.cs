@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using BirdTournaments.Core.UserAggregate;
 using BirdTournaments.Core.ProjectAggregate;
 using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.Core.BirdAggregate;
 
 namespace BirdTournaments.Infrastructure.Data;
 
@@ -24,6 +25,8 @@ public class AppDbContext : DbContext
   public DbSet<Contributor> Contributors => Set<Contributor>(); 
 
   public DbSet<User> Users => Set<User>();
+  public DbSet<Bird> Birds => Set<Bird>();
+  public DbSet<Rank> Ranks => Set<Rank>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
