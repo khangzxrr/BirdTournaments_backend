@@ -5,7 +5,7 @@
 namespace BirdTournaments.Infrastructure.Migrations;
 
   /// <inheritdoc />
-  public partial class InitialMigrationName : Migration
+  public partial class InitMigrationForBirdTournaments : Migration
   {
       /// <inheritdoc />
       protected override void Up(MigrationBuilder migrationBuilder)

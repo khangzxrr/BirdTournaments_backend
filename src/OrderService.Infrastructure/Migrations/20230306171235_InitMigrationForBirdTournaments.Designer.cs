@@ -12,8 +12,8 @@ using OrderService.Infrastructure.Data;
 namespace BirdTournaments.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230306170336_InitialMigrationName")]
-    partial class InitialMigrationName
+    [Migration("20230306171235_InitMigrationForBirdTournaments")]
+    partial class InitMigrationForBirdTournaments
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
