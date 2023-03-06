@@ -1,8 +1,8 @@
-﻿using OrderService.Core.Interfaces;
-using OrderService.Infrastructure;
-using OrderService.Infrastructure.Data;
-using OrderService.UnitTests;
-using OrderService.Web;
+﻿using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Infrastructure;
+using BirdTournaments.Infrastructure.Data;
+using BirdTournaments.UnitTests;
+using BirdTournaments.Web;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace OrderService.FunctionalTests;
+namespace BirdTournaments.FunctionalTests;
 
 public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
 {

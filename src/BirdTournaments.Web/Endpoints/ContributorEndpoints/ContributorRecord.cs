@@ -1,3 +1,3 @@
-﻿namespace OrderService.Web.Endpoints.ContributorEndpoints;
+﻿namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public record ContributorRecord(int Id, string Name);

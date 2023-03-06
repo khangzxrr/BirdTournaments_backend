@@ -1,8 +1,8 @@
-﻿using OrderService.Core.ProjectAggregate;
+﻿using BirdTournaments.Core.ProjectAggregate;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace OrderService.IntegrationTests.Data;
+namespace BirdTournaments.IntegrationTests.Data;
 
 public class EfRepositoryUpdate : BaseEfRepoTestFixture
 {

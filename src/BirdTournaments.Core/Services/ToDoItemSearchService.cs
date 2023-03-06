@@ -1,10 +1,10 @@
 ﻿using Ardalis.Result;
-using OrderService.Core.Interfaces;
-using OrderService.Core.ProjectAggregate;
-using OrderService.Core.ProjectAggregate.Specifications;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate.Specifications;
+using BirdTournaments.SharedKernel.Interfaces;
 
-namespace OrderService.Core.Services;
+namespace BirdTournaments.Core.Services;
 
 public class ToDoItemSearchService : IToDoItemSearchService
 {

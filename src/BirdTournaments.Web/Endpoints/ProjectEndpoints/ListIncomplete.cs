@@ -1,9 +1,9 @@
 ﻿using Ardalis.ApiEndpoints;
-using OrderService.Core.Interfaces;
+using BirdTournaments.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class ListIncomplete : EndpointBaseAsync
   .WithRequest<ListIncompleteRequest>

@@ -1,8 +1,8 @@
-﻿using OrderService.Infrastructure.Data;
+﻿using BirdTournaments.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace OrderService.Infrastructure;
+namespace BirdTournaments.Infrastructure;
 
 public static class StartupSetup
 {

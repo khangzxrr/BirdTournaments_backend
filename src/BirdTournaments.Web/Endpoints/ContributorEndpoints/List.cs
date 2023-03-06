@@ -1,8 +1,8 @@
-﻿using OrderService.Core.ContributorAggregate;
-using OrderService.SharedKernel.Interfaces;
+﻿using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.SharedKernel.Interfaces;
 using FastEndpoints;
 
-namespace OrderService.Web.Endpoints.ContributorEndpoints;
+namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class List : EndpointWithoutRequest<ContributorListResponse>
 {

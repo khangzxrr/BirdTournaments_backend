@@ -1,9 +1,9 @@
-﻿using OrderService.Core.ContributorAggregate;
-using OrderService.Core.ProjectAggregate;
-using OrderService.Infrastructure.Data;
+﻿using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrderService.Web;
+namespace BirdTournaments.Web;
 
 public static class SeedData
 {

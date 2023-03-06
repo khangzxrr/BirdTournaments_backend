@@ -1,8 +1,8 @@
 ﻿using System.Net.Mail;
-using OrderService.Core.Interfaces;
+using BirdTournaments.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace OrderService.Infrastructure;
+namespace BirdTournaments.Infrastructure;
 
 public class SmtpEmailSender : IEmailSender
 {

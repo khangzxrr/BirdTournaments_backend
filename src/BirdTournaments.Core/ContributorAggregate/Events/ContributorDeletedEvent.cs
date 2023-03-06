@@ -1,6 +1,6 @@
-﻿using OrderService.SharedKernel;
+﻿using BirdTournaments.SharedKernel;
 
-namespace OrderService.Core.ContributorAggregate.Events;
+namespace BirdTournaments.Core.ContributorAggregate.Events;
 
 public class ContributorDeletedEvent : DomainEventBase
 {

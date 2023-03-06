@@ -1,7 +1,7 @@
 ﻿using Ardalis.Result;
-using OrderService.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate;
 
-namespace OrderService.Core.Interfaces;
+namespace BirdTournaments.Core.Interfaces;
 
 public interface IToDoItemSearchService
 {

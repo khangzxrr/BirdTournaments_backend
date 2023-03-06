@@ -1,8 +1,8 @@
 ﻿using Ardalis.GuardClauses;
-using OrderService.SharedKernel;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
 
-namespace OrderService.Core.ContributorAggregate;
+namespace BirdTournaments.Core.ContributorAggregate;
 
 public class Contributor : EntityBase, IAggregateRoot
 {

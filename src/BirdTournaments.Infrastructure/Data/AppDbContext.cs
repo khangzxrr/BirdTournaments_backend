@@ -1,12 +1,12 @@
 ﻿using System.Reflection;
-using OrderService.Core.ContributorAggregate;
-using OrderService.Core.ProjectAggregate;
-using OrderService.SharedKernel;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using BirdTournaments.Core.UserAggregate;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Core.ContributorAggregate;
 
-namespace OrderService.Infrastructure.Data;
+namespace BirdTournaments.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {

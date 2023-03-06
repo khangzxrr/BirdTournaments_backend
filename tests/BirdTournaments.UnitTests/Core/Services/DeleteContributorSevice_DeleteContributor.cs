@@ -1,14 +1,14 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Ardalis.Specification;
-using OrderService.Core.ContributorAggregate;
-using OrderService.Core.Services;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.Core.Services;
+using BirdTournaments.SharedKernel.Interfaces;
 using MediatR;
 using Moq;
 using Xunit;
 
-namespace OrderService.UnitTests.Core.Services
+namespace BirdTournaments.UnitTests.Core.Services
 {
     public class DeleteContributorService_DeleteContributor
     {

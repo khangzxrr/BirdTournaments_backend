@@ -1,8 +1,8 @@
-﻿using OrderService.Core.ContributorAggregate;
+﻿using BirdTournaments.Core.ContributorAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace OrderService.Infrastructure.Data.Config;
+namespace BirdTournaments.Infrastructure.Data.Config;
 
 public class ContributorConfiguration : IEntityTypeConfiguration<Contributor>
 {

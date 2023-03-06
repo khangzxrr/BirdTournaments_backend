@@ -1,6 +1,6 @@
-﻿using OrderService.Core.Interfaces;
+﻿using BirdTournaments.Core.Interfaces;
 
-namespace OrderService.Infrastructure;
+namespace BirdTournaments.Infrastructure;
 
 public class FakeEmailSender : IEmailSender
 {

@@ -1,9 +1,9 @@
 ﻿using Ardalis.HttpClientTestExtensions;
-using OrderService.Web;
-using OrderService.Web.Endpoints.ContributorEndpoints;
+using BirdTournaments.Web;
+using BirdTournaments.Web.Endpoints.ContributorEndpoints;
 using Xunit;
 
-namespace OrderService.FunctionalTests.ApiEndpoints;
+namespace BirdTournaments.FunctionalTests.ApiEndpoints;
 
 [Collection("Sequential")]
 public class ContributorGetById : IClassFixture<CustomWebApplicationFactory<WebMarker>>

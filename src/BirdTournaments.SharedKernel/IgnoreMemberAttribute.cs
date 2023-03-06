@@ -1,4 +1,4 @@
-﻿namespace OrderService.SharedKernel;
+﻿namespace BirdTournaments.SharedKernel;
 
 // source: https://github.com/jhewlett/ValueObject
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]

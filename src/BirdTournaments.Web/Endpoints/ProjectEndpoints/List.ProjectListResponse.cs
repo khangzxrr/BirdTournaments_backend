@@ -1,5 +1,5 @@
 ﻿
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class ProjectListResponse
 {

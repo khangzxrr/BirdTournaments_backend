@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace OrderService.Core.ProjectAggregate;
+namespace BirdTournaments.Core.ProjectAggregate;
 
 public class PriorityStatus : SmartEnum<PriorityStatus>
 {

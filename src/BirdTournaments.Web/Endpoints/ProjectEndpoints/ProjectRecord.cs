@@ -1,3 +1,3 @@
-﻿namespace OrderService.Web.Endpoints.ProjectEndpoints;
+﻿namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public record ProjectRecord(int Id, string Name);

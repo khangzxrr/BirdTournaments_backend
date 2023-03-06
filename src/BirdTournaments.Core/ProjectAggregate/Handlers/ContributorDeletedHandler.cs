@@ -1,9 +1,9 @@
-﻿using OrderService.Core.ContributorAggregate.Events;
-using OrderService.SharedKernel.Interfaces;
-using OrderService.Core.ProjectAggregate.Specifications;
+﻿using BirdTournaments.Core.ContributorAggregate.Events;
+using BirdTournaments.SharedKernel.Interfaces;
+using BirdTournaments.Core.ProjectAggregate.Specifications;
 using MediatR;
 
-namespace OrderService.Core.ProjectAggregate.Handlers;
+namespace BirdTournaments.Core.ProjectAggregate.Handlers;
 
 public class ContributorDeletedHandler : INotificationHandler<ContributorDeletedEvent>
 {

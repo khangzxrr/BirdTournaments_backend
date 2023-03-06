@@ -1,9 +1,9 @@
 ﻿using Ardalis.GuardClauses;
-using OrderService.Core.Interfaces;
-using OrderService.Core.ProjectAggregate.Events;
+using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Core.ProjectAggregate.Events;
 using MediatR;
 
-namespace OrderService.Core.ProjectAggregate.Handlers;
+namespace BirdTournaments.Core.ProjectAggregate.Handlers;
 
 public class ItemCompletedEmailNotificationHandler : INotificationHandler<ToDoItemCompletedEvent>
 {

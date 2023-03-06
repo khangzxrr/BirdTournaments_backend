@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using OrderService.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate;
 
-namespace OrderService.Web.ApiModels;
+namespace BirdTournaments.Web.ApiModels;
 
 // ApiModel DTOs are used by ApiController classes and are typically kept in a side-by-side folder
 public class ToDoItemDTO

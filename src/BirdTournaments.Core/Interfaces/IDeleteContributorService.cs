@@ -1,6 +1,6 @@
-using Ardalis.Result;
+﻿using Ardalis.Result;
 
-namespace OrderService.Core.Interfaces;
+namespace BirdTournaments.Core.Interfaces;
 
 public interface IDeleteContributorService
 {

@@ -1,11 +1,11 @@
-﻿using OrderService.Core.ProjectAggregate;
-using OrderService.Infrastructure.Data;
-using OrderService.SharedKernel.Interfaces;
+﻿using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Infrastructure.Data;
+using BirdTournaments.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 
-namespace OrderService.IntegrationTests.Data;
+namespace BirdTournaments.IntegrationTests.Data;
 
 public abstract class BaseEfRepoTestFixture
 {

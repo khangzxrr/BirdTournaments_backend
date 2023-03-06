@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OrderService.Infrastructure.Data;
+using BirdTournaments.Infrastructure.Data;
 
 #nullable disable
 
@@ -25,7 +25,7 @@ namespace BirdTournaments.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OrderService.Core.ContributorAggregate.Contributor", b =>
+            modelBuilder.Entity("BirdTournaments.Core.ContributorAggregate.Contributor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.ToTable("Contributors");
                 });
 
-            modelBuilder.Entity("OrderService.Core.ProjectAggregate.Project", b =>
+            modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("OrderService.Core.ProjectAggregate.ToDoItem", b =>
+            modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.ToDoItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,14 +96,14 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.ToTable("ToDoItems");
                 });
 
-            modelBuilder.Entity("OrderService.Core.ProjectAggregate.ToDoItem", b =>
+            modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.ToDoItem", b =>
                 {
-                    b.HasOne("OrderService.Core.ProjectAggregate.Project", null)
+                    b.HasOne("BirdTournaments.Core.ProjectAggregate.Project", null)
                         .WithMany("Items")
                         .HasForeignKey("ProjectId");
                 });
 
-            modelBuilder.Entity("OrderService.Core.ProjectAggregate.Project", b =>
+            modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.Project", b =>
                 {
                     b.Navigation("Items");
                 });

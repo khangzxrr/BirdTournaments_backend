@@ -1,10 +1,10 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using OrderService.Core;
-using OrderService.Infrastructure;
-using OrderService.Infrastructure.Data;
-using OrderService.Web;
+using BirdTournaments.Core;
+using BirdTournaments.Infrastructure;
+using BirdTournaments.Infrastructure.Data;
+using BirdTournaments.Web;
 using FastEndpoints;
 using FastEndpoints.Swagger.Swashbuckle;
 using FastEndpoints.ApiExplorer;

@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using Autofac;
-using OrderService.Core.Interfaces;
-using OrderService.Core.ProjectAggregate;
-using OrderService.Infrastructure.Data;
-using OrderService.SharedKernel;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Infrastructure.Data;
+using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
 using MediatR;
 using MediatR.Pipeline;
 using Module = Autofac.Module;
 
-namespace OrderService.Infrastructure;
+namespace BirdTournaments.Infrastructure;
 
 public class DefaultInfrastructureModule : Module
 {

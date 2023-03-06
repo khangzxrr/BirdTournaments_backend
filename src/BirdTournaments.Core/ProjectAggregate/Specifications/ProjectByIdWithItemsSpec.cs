@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification;
-using OrderService.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate;
 
-namespace OrderService.Core.ProjectAggregate.Specifications;
+namespace BirdTournaments.Core.ProjectAggregate.Specifications;
 
 public class ProjectByIdWithItemsSpec : Specification<Project>, ISingleResultSpecification
 {

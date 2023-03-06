@@ -1,6 +1,6 @@
 ﻿using Ardalis.Specification;
 
-namespace OrderService.Core.ProjectAggregate.Specifications;
+namespace BirdTournaments.Core.ProjectAggregate.Specifications;
 
 public class IncompleteItemsSpec : Specification<ToDoItem>
 {

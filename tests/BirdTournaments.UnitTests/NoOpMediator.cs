@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using MediatR;
 
-namespace OrderService.UnitTests;
+namespace BirdTournaments.UnitTests;
 
 public class NoOpMediator : IMediator
 {

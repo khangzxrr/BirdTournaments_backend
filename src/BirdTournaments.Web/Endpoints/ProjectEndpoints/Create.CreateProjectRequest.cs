@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class CreateProjectRequest
 {

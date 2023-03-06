@@ -1,11 +1,11 @@
-﻿using OrderService.Core.Interfaces;
-using OrderService.Core.ProjectAggregate;
-using OrderService.Core.ProjectAggregate.Events;
-using OrderService.Core.ProjectAggregate.Handlers;
+﻿using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate.Events;
+using BirdTournaments.Core.ProjectAggregate.Handlers;
 using Moq;
 using Xunit;
 
-namespace OrderService.UnitTests.Core.Handlers;
+namespace BirdTournaments.UnitTests.Core.Handlers;
 
 public class ItemCompletedEmailNotificationHandlerHandle
 {

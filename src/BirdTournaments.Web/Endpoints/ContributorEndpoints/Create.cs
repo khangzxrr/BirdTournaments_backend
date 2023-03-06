@@ -1,10 +1,10 @@
-﻿using OrderService.Core.ContributorAggregate;
-using OrderService.SharedKernel.Interfaces;
+﻿using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.SharedKernel.Interfaces;
 using Ardalis.ApiEndpoints;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrderService.Web.Endpoints.ContributorEndpoints;
+namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class Create : EndpointBaseAsync
   .WithRequest<CreateContributorRequest>

@@ -1,10 +1,10 @@
 ﻿using Ardalis.Result;
-using OrderService.Core.Interfaces;
+using BirdTournaments.Core.Interfaces;
 using Ardalis.ApiEndpoints;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrderService.Web.Endpoints.ContributorEndpoints;
+namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class Delete : EndpointBaseAsync
   .WithRequest<DeleteContributorRequest>

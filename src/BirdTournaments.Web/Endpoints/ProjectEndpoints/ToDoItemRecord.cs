@@ -1,3 +1,3 @@
-﻿namespace OrderService.Web.Endpoints.ProjectEndpoints;
+﻿namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public record ToDoItemRecord(int Id, string Title, string Description, bool IsDone);

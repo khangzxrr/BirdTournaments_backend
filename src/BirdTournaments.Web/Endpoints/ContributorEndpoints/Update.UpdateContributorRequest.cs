@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OrderService.Web.Endpoints.ContributorEndpoints;
+namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class UpdateContributorRequest
 {

@@ -1,8 +1,8 @@
-﻿using OrderService.Core.ProjectAggregate;
+﻿using BirdTournaments.Core.ProjectAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace OrderService.Infrastructure.Data.Config;
+namespace BirdTournaments.Infrastructure.Data.Config;
 
 public class ProjectConfiguration : IEntityTypeConfiguration<Project>
 {

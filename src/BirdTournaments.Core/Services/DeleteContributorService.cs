@@ -1,11 +1,11 @@
 using Ardalis.Result;
-using OrderService.Core.ContributorAggregate;
-using OrderService.Core.ContributorAggregate.Events;
-using OrderService.Core.Interfaces;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.Core.ContributorAggregate.Events;
+using BirdTournaments.Core.Interfaces;
+using BirdTournaments.SharedKernel.Interfaces;
 using MediatR;
 
-namespace OrderService.Core.Services;
+namespace BirdTournaments.Core.Services;
 
 public class DeleteContributorService : IDeleteContributorService
 {

@@ -1,8 +1,8 @@
-﻿using OrderService.Core.ProjectAggregate;
-using OrderService.Core.ProjectAggregate.Specifications;
+﻿using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate.Specifications;
 using Xunit;
 
-namespace OrderService.UnitTests.Core.Specifications;
+namespace BirdTournaments.UnitTests.Core.Specifications;
 
 public class IncompleteItemsSpecificationConstructor
 {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace OrderService.Core.Interfaces;
+namespace BirdTournaments.Core.Interfaces;
 
 public interface IEmailSender
 {

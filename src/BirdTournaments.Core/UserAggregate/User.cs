@@ -1,8 +1,7 @@
 ﻿
 using Ardalis.GuardClauses;
-using OrderService.Core.UserAggregate;
-using OrderService.SharedKernel;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
 
 namespace BirdTournaments.Core.UserAggregate;
 
@@ -14,23 +13,24 @@ public class User : EntityBase, IAggregateRoot
   public string Hash { get; private set;}
   public string Salt{ get; private set; }
 
-  public bool Verify { get; private set; }
+  public UserVerify Verify { get; }
+
   public User(
     string userName,
     string email,
     string hash,
     string salt,
     string role,
-    bool verify
+    UserVerify verify
     )
   {
-    this.UserName = Guard.Against.NullOrEmpty(userName, nameof(userName));
-    this.Email = Guard.Against.NullOrEmpty(email, nameof(email));
-    this.Hash = Guard.Against.NullOrEmpty(hash, nameof(hash));
-    this.Salt = Guard.Against.NullOrEmpty(salt, nameof(salt));
-    this.Role = Guard.Against.NullOrEmpty(role, nameof(role));
+    UserName = Guard.Against.NullOrEmpty(userName, nameof(userName));
+    Email = Guard.Against.NullOrEmpty(email, nameof(email));
+    Hash = Guard.Against.NullOrEmpty(hash, nameof(hash));
+    Salt = Guard.Against.NullOrEmpty(salt, nameof(salt));
+    Role = Guard.Against.NullOrEmpty(role, nameof(role));
 
-    this.Verify = verify;
+    Verify = verify;
   }
 }
 

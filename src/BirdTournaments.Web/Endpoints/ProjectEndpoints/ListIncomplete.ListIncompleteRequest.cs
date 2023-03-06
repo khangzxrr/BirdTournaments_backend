@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class ListIncompleteRequest
 {

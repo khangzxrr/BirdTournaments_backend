@@ -1,9 +1,9 @@
 ﻿using Ardalis.GuardClauses;
-using OrderService.Core.ProjectAggregate.Events;
-using OrderService.SharedKernel;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
+using BirdTournaments.Core.ProjectAggregate.Events;
 
-namespace OrderService.Core.ProjectAggregate;
+namespace BirdTournaments.Core.ProjectAggregate;
 
 public class Project : EntityBase, IAggregateRoot
 {

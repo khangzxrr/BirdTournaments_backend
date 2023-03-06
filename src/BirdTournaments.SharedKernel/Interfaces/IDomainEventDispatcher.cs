@@ -1,5 +1,5 @@
 ﻿
-namespace OrderService.SharedKernel.Interfaces;
+namespace BirdTournaments.SharedKernel.Interfaces;
 
 public interface IDomainEventDispatcher
 {

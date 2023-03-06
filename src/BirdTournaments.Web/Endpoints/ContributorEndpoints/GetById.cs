@@ -1,9 +1,9 @@
-﻿using OrderService.Core.ContributorAggregate;
-using OrderService.Core.ContributorAggregate.Specifications;
-using OrderService.SharedKernel.Interfaces;
+﻿using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.Core.ContributorAggregate.Specifications;
+using BirdTournaments.SharedKernel.Interfaces;
 using FastEndpoints;
 
-namespace OrderService.Web.Endpoints.ContributorEndpoints;
+namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class GetById : Endpoint<GetContributorByIdRequest, ContributorRecord>
 {

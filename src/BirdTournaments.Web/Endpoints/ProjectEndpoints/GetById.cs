@@ -1,11 +1,11 @@
 ﻿using Ardalis.ApiEndpoints;
-using OrderService.Core.ProjectAggregate;
-using OrderService.Core.ProjectAggregate.Specifications;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.Core.ProjectAggregate.Specifications;
+using BirdTournaments.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class GetById : EndpointBaseAsync
   .WithRequest<GetProjectByIdRequest>

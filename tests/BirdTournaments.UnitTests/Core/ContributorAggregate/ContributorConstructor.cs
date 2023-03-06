@@ -1,7 +1,7 @@
-﻿using OrderService.Core.ContributorAggregate;
+﻿using BirdTournaments.Core.ContributorAggregate;
 using Xunit;
 
-namespace OrderService.UnitTests.Core.ContributorAggregate;
+namespace BirdTournaments.UnitTests.Core.ContributorAggregate;
 
 public class ContributorConstructor
 {

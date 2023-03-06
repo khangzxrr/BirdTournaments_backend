@@ -1,7 +1,7 @@
-﻿using OrderService.Core.ContributorAggregate;
-using OrderService.SharedKernel;
+﻿using BirdTournaments.Core.ContributorAggregate;
+using BirdTournaments.SharedKernel;
 
-namespace OrderService.Core.ProjectAggregate.Events;
+namespace BirdTournaments.Core.ProjectAggregate.Events;
 
 public class ContributorAddedToItemEvent : DomainEventBase
 {

@@ -1,9 +1,9 @@
 ﻿using Ardalis.HttpClientTestExtensions;
-using OrderService.Web;
-using OrderService.Web.Endpoints.ProjectEndpoints;
+using BirdTournaments.Web;
+using BirdTournaments.Web.Endpoints.ProjectEndpoints;
 using Xunit;
 
-namespace OrderService.FunctionalTests.ApiEndpoints;
+namespace BirdTournaments.FunctionalTests.ApiEndpoints;
 
 [Collection("Sequential")]
 public class ProjectList : IClassFixture<CustomWebApplicationFactory<WebMarker>>

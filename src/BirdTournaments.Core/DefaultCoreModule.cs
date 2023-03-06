@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using OrderService.Core.Interfaces;
-using OrderService.Core.Services;
+using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Core.Services;
 
-namespace OrderService.Core;
+namespace BirdTournaments.Core;
 
 public class DefaultCoreModule : Module
 {

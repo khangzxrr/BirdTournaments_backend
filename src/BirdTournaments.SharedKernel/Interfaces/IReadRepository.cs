@@ -1,6 +1,6 @@
 ﻿using Ardalis.Specification;
 
-namespace OrderService.SharedKernel.Interfaces;
+namespace BirdTournaments.SharedKernel.Interfaces;
 
 public interface IReadRepository<T> : IReadRepositoryBase<T> where T : class, IAggregateRoot
 {

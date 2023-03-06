@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.SharedKernel.Interfaces;
 
-namespace OrderService.Infrastructure.Data;
+namespace BirdTournaments.Infrastructure.Data;
 
 // inherit from Ardalis.Specification type
 public class EfRepository<T> : RepositoryBase<T>, IReadRepository<T>, IRepository<T> where T : class, IAggregateRoot

@@ -1,4 +1,4 @@
-﻿namespace OrderService.Core.ProjectAggregate;
+﻿namespace BirdTournaments.Core.ProjectAggregate;
 
 public enum ProjectStatus
 {

@@ -1,7 +1,7 @@
-﻿using OrderService.Core.ProjectAggregate;
+﻿using BirdTournaments.Core.ProjectAggregate;
 using Xunit;
 
-namespace OrderService.UnitTests.Core.ProjectAggregate;
+namespace BirdTournaments.UnitTests.Core.ProjectAggregate;
 
 public class ProjectConstructor
 {

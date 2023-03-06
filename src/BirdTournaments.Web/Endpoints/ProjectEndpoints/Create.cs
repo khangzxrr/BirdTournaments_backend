@@ -1,10 +1,10 @@
 ﻿using Ardalis.ApiEndpoints;
-using OrderService.Core.ProjectAggregate;
-using OrderService.SharedKernel.Interfaces;
+using BirdTournaments.Core.ProjectAggregate;
+using BirdTournaments.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace OrderService.Web.Endpoints.ProjectEndpoints;
+namespace BirdTournaments.Web.Endpoints.ProjectEndpoints;
 
 public class Create : EndpointBaseAsync
   .WithRequest<CreateProjectRequest>

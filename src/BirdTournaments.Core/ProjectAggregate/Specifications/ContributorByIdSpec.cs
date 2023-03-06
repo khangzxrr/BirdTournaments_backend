@@ -1,6 +1,6 @@
 ﻿using Ardalis.Specification;
 
-namespace OrderService.Core.ContributorAggregate.Specifications;
+namespace BirdTournaments.Core.ContributorAggregate.Specifications;
 
 public class ContributorByIdSpec : Specification<Contributor>, ISingleResultSpecification
 {

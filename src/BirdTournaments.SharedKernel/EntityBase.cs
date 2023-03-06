@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OrderService.SharedKernel;
+namespace BirdTournaments.SharedKernel;
 
 // This can be modified to EntityBase<TId> to support multiple key types (e.g. Guid)
 public abstract class EntityBase

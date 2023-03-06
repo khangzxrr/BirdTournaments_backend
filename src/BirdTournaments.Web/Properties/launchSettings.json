@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "OrderService.Web": {
+    "BirdTournaments.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:57679",

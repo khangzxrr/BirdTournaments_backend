@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace OrderService.SharedKernel;
+namespace BirdTournaments.SharedKernel;
 
 public abstract class DomainEventBase : INotification
 {

@@ -1,7 +1,7 @@
-﻿using OrderService.SharedKernel.Interfaces;
+﻿using BirdTournaments.SharedKernel.Interfaces;
 using MediatR;
 
-namespace OrderService.SharedKernel;
+namespace BirdTournaments.SharedKernel;
 
 public class DomainEventDispatcher : IDomainEventDispatcher
 {

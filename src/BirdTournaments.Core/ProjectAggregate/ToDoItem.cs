@@ -1,8 +1,8 @@
 ﻿using Ardalis.GuardClauses;
-using OrderService.Core.ProjectAggregate.Events;
-using OrderService.SharedKernel;
+using BirdTournaments.Core.ProjectAggregate.Events;
+using BirdTournaments.SharedKernel;
 
-namespace OrderService.Core.ProjectAggregate;
+namespace BirdTournaments.Core.ProjectAggregate;
 
 public class ToDoItem : EntityBase
 {
