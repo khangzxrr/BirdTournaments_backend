@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\OrderService.Infrastructure\BirdTournaments.Infrastructure.csproj" />
-    <ProjectReference Include="..\OrderService.UnitTests\OrderService.UnitTests.csproj" />
+    <ProjectReference Include="..\OrderService.UnitTests\BirdTournaments.UnitTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>
