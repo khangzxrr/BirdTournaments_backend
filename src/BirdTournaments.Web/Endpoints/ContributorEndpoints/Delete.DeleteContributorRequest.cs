@@ -1,4 +1,4 @@
-namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
+﻿namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
 public class DeleteContributorRequest
 {

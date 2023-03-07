@@ -11,6 +11,10 @@ using FastEndpoints.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +36,34 @@ builder.Services.AddDbContext(connectionString!);
 //builder.Services.AddFastEndpoints();
 //builder.Services.AddFastEndpointsApiExplorer();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+  options.SaveToken = true;
+
+  string key = builder.Configuration.GetSection("Jwt:Key").Get<String>()!;
+
+  options.TokenValidationParameters = new TokenValidationParameters()
+  {
+    ValidateIssuer = true,
+    ValidateAudience = true,
+    ValidAudience = builder.Configuration["Jwt:Audience"],
+    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+  };
+});
+
+const string CORS_POLICY = "CorsPolicy";
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy(name: CORS_POLICY,
+                    corsPolicyBuilder =>
+                    {
+                      corsPolicyBuilder.WithOrigins("localhost");
+                      corsPolicyBuilder.AllowAnyMethod();
+                      corsPolicyBuilder.AllowAnyHeader();
+                    });
+});
+
 builder.Services.AddControllers(); 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -39,6 +71,16 @@ builder.Services.AddSwaggerGen(c =>
 {
   c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
   c.EnableAnnotations();
+  c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+  {
+    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+    Name = "Authorization",
+    In = ParameterLocation.Header,
+    Type = SecuritySchemeType.ApiKey,
+    Scheme = "Bearer"
+  });
   //c.OperationFilter<FastEndpointsOperationFilter>();
 });
 
@@ -75,6 +117,12 @@ else
 app.UseRouting();
 app.MapControllers();
 app.UseHttpsRedirection();
+
+app.UseCors(CORS_POLICY);
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseCookiePolicy();
 
 // Enable middleware to serve generated Swagger as a JSON endpoint.

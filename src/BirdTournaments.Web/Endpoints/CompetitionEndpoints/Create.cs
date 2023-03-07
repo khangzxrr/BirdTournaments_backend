@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using BirdTournaments.Core.ParticipantAggregate;
 using BirdTournaments.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BirdTournaments.Web.Endpoints.CompetitionEndpoints;
 
@@ -22,6 +23,7 @@ public class Create : EndpointBaseAsync
   
 
   [HttpPost("/Competitions")]
+  [Authorize]
   [SwaggerOperation(
     Summary = "Create a new Competition",
     Description = "Create a new Competition",

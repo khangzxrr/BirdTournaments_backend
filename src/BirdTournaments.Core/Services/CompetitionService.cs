@@ -17,7 +17,7 @@ using MediatR;
 namespace BirdTournaments.Core.Services;
 public class CompetitionService : ICompetitionService
 {
-  private readonly IRepository<Competition> _repository;
+  private readonly IRepository<Competition> _competitionRepository;
   private readonly IRepository<Moderator> _moderRepository;
   private readonly IRepository<Place> _placeRepository;
   private readonly IRepository<BirdType> _birdTypeRepository;
@@ -33,7 +33,7 @@ public class CompetitionService : ICompetitionService
     IRepository<Bird> birdRepository,
     IRepository<BirdOwner> birdOwnerRepository)
   {
-    _repository = repository;
+    _competitionRepository = repository;
     _moderRepository = moderRepository;
     
     _placeRepository = placeRepository;
@@ -80,22 +80,40 @@ public class CompetitionService : ICompetitionService
 
     competition.AddParticipant(newParticipant);
 
-    competition = await _repository.AddAsync(competition);
+    competition = await _competitionRepository.AddAsync(competition);
 
 
     return Result<Competition>.Success(competition);
   }
 
-  public Task<Result> AddOpponent(Competition competition)
+  public async Task<Result> AddOpponent(int competitionId, int birdId, int ownerId)
   {
-    throw new NotImplementedException();
+    var competition = await _competitionRepository.GetByIdAsync(competitionId);
+    var bird = await _birdRepository.GetByIdAsync(birdId);
+    var birdOwner = await _birdOwnerRepository.GetByIdAsync(ownerId);
+
+    Guard.Against.Null(competition, nameof(competition));
+    Guard.Against.Null(bird, nameof(bird));
+    Guard.Against.Null(birdOwner, nameof(birdOwner));
+
+    var participant = new Participant();
+    participant.SetParticipantStatus(ParticipantStatus.Joined);
+    participant.SetBird(bird);
+    participant.SetBirdOwner(birdOwner);
+    participant.SetSubmitUrl("");
+
+    competition.AddParticipant(participant);
+    await _competitionRepository.SaveChangesAsync();
+
+    return Result.Success();
+
   }
 
   public async Task<ICollection<Competition>> GetWaitingCompetitionByRank(Rank rank)
   {
 
     var competitionSpecs = new CompetitionByRank(rank);
-    var listCompetitions = await _repository.ListAsync(competitionSpecs);
+    var listCompetitions = await _competitionRepository.ListAsync(competitionSpecs);
 
     return listCompetitions;
   }

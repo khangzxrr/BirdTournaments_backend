@@ -2779,3 +2779,338 @@ SELECT 1 ELSE SELECT 0
 2023-03-07 19:33:20.547 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.1067ms
 2023-03-07 19:33:20.650 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
 2023-03-07 19:33:20.773 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.3941ms
+2023-03-07 21:00:34.751 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:00:34.843 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 21:00:34.849 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:00:34.852 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 21:00:34.879 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 21:00:34.901 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 21:00:34.906 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:00:34.923 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 21:00:35.049 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 21:00:35.052 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 21:00:35.054 +07:00 [INF] Hosting environment: Development
+2023-03-07 21:00:35.055 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 21:00:35.644 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 21:00:35.716 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 21:00:35.765 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 125.0348ms
+2023-03-07 21:00:41.965 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 21:00:42.149 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 21:00:42.151 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 186.0510ms
+2023-03-07 21:00:42.153 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.4927ms
+2023-03-07 21:00:42.162 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 21:00:42.179 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.3968ms
+2023-03-07 21:00:42.285 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 21:00:42.404 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 118.8452ms
+2023-03-07 21:00:50.841 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55
+2023-03-07 21:00:50.847 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:00:50.877 +07:00 [INF] Route matched with {action = "Handle", controller = "Join"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.JoinCompetitionRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join (BirdTournaments.Web).
+2023-03-07 21:00:51.335 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status]
+FROM [Competitions] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-03-07 21:00:51.364 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[BirdOwnerId], [b].[BirdTypeId], [b].[Elo], [b].[Image], [b].[Name], [b].[RankId]
+FROM [Birds] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:00:51.373 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[Name], [b].[PhoneNumber], [b].[UserId]
+FROM [BirdOwners] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:00:51.489 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-03-07 21:00:51.496 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web) in 611.5349ms
+2023-03-07 21:00:51.499 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:00:51.504 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55 - 400 - text/plain;+charset=utf-8 663.0116ms
+2023-03-07 21:02:48.235 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55
+2023-03-07 21:02:48.238 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:02:48.241 +07:00 [INF] Route matched with {action = "Handle", controller = "Join"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.JoinCompetitionRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join (BirdTournaments.Web).
+2023-03-07 21:02:48.310 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status]
+FROM [Competitions] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-03-07 21:02:48.390 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[BirdOwnerId], [b].[BirdTypeId], [b].[Elo], [b].[Image], [b].[Name], [b].[RankId]
+FROM [Birds] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:02:48.417 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[Name], [b].[PhoneNumber], [b].[UserId]
+FROM [BirdOwners] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:02:48.496 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-03-07 21:02:48.499 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web) in 254.4237ms
+2023-03-07 21:02:48.503 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:02:48.505 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55 - 400 - text/plain;+charset=utf-8 270.8987ms
+2023-03-07 21:03:09.578 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55
+2023-03-07 21:03:09.584 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:03:09.586 +07:00 [INF] Route matched with {action = "Handle", controller = "Join"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.JoinCompetitionRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join (BirdTournaments.Web).
+2023-03-07 21:03:09.596 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status]
+FROM [Competitions] AS [c]
+WHERE [c].[Id] = @__p_0
+2023-03-07 21:03:09.606 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[BirdOwnerId], [b].[BirdTypeId], [b].[Elo], [b].[Image], [b].[Name], [b].[RankId]
+FROM [Birds] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:03:09.611 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[Name], [b].[PhoneNumber], [b].[UserId]
+FROM [BirdOwners] AS [b]
+WHERE [b].[Id] = @__p_0
+2023-03-07 21:03:09.829 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Participants] ([BirdId], [BirdOwnerId], [CompetitionId], [EloGain], [Status], [SubmitUrl])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2023-03-07 21:03:09.873 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2023-03-07 21:03:09.875 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web) in 284.5579ms
+2023-03-07 21:03:09.876 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Join.HandleAsync (BirdTournaments.Web)'
+2023-03-07 21:03:09.878 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions/join application/json 55 - 200 0 - 300.1718ms
+2023-03-07 21:08:55.155 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:08:55.245 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 21:08:55.251 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:08:55.255 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 21:08:55.279 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 21:08:55.295 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 21:08:55.298 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 21:08:55.313 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 21:08:55.447 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 21:08:55.456 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 21:08:55.458 +07:00 [INF] Hosting environment: Development
+2023-03-07 21:08:55.459 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 21:08:55.738 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 21:08:55.800 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 21:08:55.833 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 95.7603ms
+2023-03-07 21:08:58.115 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 21:08:58.297 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 21:08:58.299 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 183.8966ms
+2023-03-07 21:08:58.301 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.0379ms
+2023-03-07 21:08:58.306 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 21:08:58.328 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.7348ms
+2023-03-07 21:08:58.439 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 21:08:58.540 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 101.6970ms
+2023-03-07 22:55:29.450 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 22:55:29.508 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 22:55:29.513 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 22:55:29.516 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 22:55:29.533 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 22:55:29.548 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 22:55:29.553 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 22:55:29.566 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 22:55:29.611 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 22:55:29.751 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 22:55:29.754 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 22:55:29.755 +07:00 [INF] Hosting environment: Development
+2023-03-07 22:55:29.757 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 22:55:30.092 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 22:55:30.151 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 22:55:30.619 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 528.9701ms
+2023-03-07 22:55:32.558 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 22:55:32.729 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 171.0930ms
+2023-03-07 22:55:32.731 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 22:55:32.735 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.0505ms
+2023-03-07 22:55:32.742 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 22:55:32.757 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.8107ms
+2023-03-07 22:55:32.855 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 22:55:32.959 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.9517ms
+2023-03-07 22:55:48.856 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 22:55:48.859 +07:00 [INF] CORS policy execution failed.
+2023-03-07 22:55:48.861 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 22:55:48.873 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-07 22:55:48.879 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-03-07 22:55:48.881 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 401 0 - 25.2532ms
+2023-03-07 23:00:25.154 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:00:25.234 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:00:25.238 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:00:25.241 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:00:25.259 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:00:25.275 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:00:25.278 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:00:25.292 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:00:25.323 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:00:25.454 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:00:25.457 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:00:25.459 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:00:25.460 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:00:25.824 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 23:00:25.886 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:00:25.971 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 149.4842ms
+2023-03-07 23:00:29.486 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:00:29.657 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:00:29.659 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 173.2545ms
+2023-03-07 23:00:29.661 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 3.6865ms
+2023-03-07 23:00:29.667 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:00:29.682 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.7989ms
+2023-03-07 23:00:29.780 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:00:29.901 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.3337ms
+2023-03-07 23:02:08.647 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:02:08.717 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:02:08.722 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:02:08.726 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:02:08.741 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:02:08.757 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:02:08.761 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:02:08.775 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:02:08.808 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:03:02.543 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:02.609 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:03:02.613 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:02.615 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:03:02.629 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:03:02.643 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:03:02.646 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:02.658 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:03:02.690 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:03:02.829 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:03:02.832 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:03:02.833 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:03:02.835 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:03:03.390 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger - -
+2023-03-07 23:03:03.462 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:03:03.552 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger - - - 301 0 - 159.0501ms
+2023-03-07 23:03:03.557 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:03:03.714 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:03:03.715 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:03:03.730 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 172.8645ms
+2023-03-07 23:03:03.730 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 14.8787ms
+2023-03-07 23:03:03.750 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.0807ms
+2023-03-07 23:03:04.217 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:03:04.409 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.7027ms

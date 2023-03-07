@@ -11,6 +11,6 @@ namespace BirdTournaments.Core.Interfaces;
 public interface ICompetitionService
 {
   public Task<Competition> AddNewCompetition(int placeId, int birdTypeId, DateTime date, int creatorBirdId, int creatorId);
-  public Task<Result> AddOpponent(Competition competition);
+  public Task<Result> AddOpponent(int competitionId, int birdId, int ownerId);
   public Task<ICollection<Competition>> GetWaitingCompetitionByRank(Rank rank); 
 }
