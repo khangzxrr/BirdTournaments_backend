@@ -28,8 +28,7 @@ public class User : EntityBase, IAggregateRoot
     string hash,
     string salt,
     UserVerify verify,
-    UserRole role,
-    BirdOwner birdOwner
+    UserRole role
     )
   {
     UserName = Guard.Against.NullOrEmpty(userName, nameof(userName));
@@ -40,7 +39,7 @@ public class User : EntityBase, IAggregateRoot
 
     Verify = verify;
     Role = role;
-    BirdOwner = birdOwner;
   }
+
 }
 

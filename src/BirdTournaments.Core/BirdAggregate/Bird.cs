@@ -11,27 +11,29 @@ public class Bird : EntityBase, IAggregateRoot
   public int Elo { get;  }
 
 
-  public Rank Rank { get; }
-  public BirdType BirdType { get; }
-  public BirdOwner BirdOwner { get; }
+  public Rank Rank { get; private set; }
+  public BirdType BirdType { get; private set; }
 
   #pragma warning disable CS8618 // Required by Entity Framework
   private Bird() { }
   public Bird(
       string name,
       string image,
-      int elo,
-      Rank rank,
-      BirdType birdType,
-      BirdOwner birdOwner
+      int elo
     )
   {
     Name = Guard.Against.NullOrEmpty(name, nameof(name));
     Image = Guard.Against.NullOrEmpty(image, nameof(image));
     Elo = elo;
+  }
 
-    BirdType = birdType;
-    Rank = rank;
-    BirdOwner = birdOwner;
+  public void SetRank(Rank rank)
+  {
+    Rank = Guard.Against.Null(rank, nameof(rank));
+  }
+
+  public void SetBirdType(BirdType birdType)
+  {
+    BirdType = Guard.Against.Null(birdType, nameof(birdType));    
   }
 }

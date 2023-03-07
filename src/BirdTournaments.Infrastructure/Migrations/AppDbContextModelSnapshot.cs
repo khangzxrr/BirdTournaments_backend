@@ -154,6 +154,142 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.ToTable("Contributors");
                 });
 
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Competition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BirdTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ModeratorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlaceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BirdTypeId");
+
+                    b.HasIndex("ModeratorId");
+
+                    b.HasIndex("PlaceId");
+
+                    b.ToTable("Competitions");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Moderator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Moderators");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Participant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BirdId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BirdOwnerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CompetitionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EloGain")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SubmitUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BirdId");
+
+                    b.HasIndex("BirdOwnerId");
+
+                    b.HasIndex("CompetitionId");
+
+                    b.ToTable("Participants");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Place", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegionId");
+
+                    b.ToTable("Places");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Region", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Regions");
+                });
+
             modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -280,6 +416,79 @@ namespace BirdTournaments.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Competition", b =>
+                {
+                    b.HasOne("BirdTournaments.Core.BirdAggregate.BirdType", "BirdType")
+                        .WithMany()
+                        .HasForeignKey("BirdTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BirdTournaments.Core.ParticipantAggregate.Moderator", "Moderator")
+                        .WithMany()
+                        .HasForeignKey("ModeratorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BirdTournaments.Core.ParticipantAggregate.Place", "Place")
+                        .WithMany()
+                        .HasForeignKey("PlaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BirdType");
+
+                    b.Navigation("Moderator");
+
+                    b.Navigation("Place");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Moderator", b =>
+                {
+                    b.HasOne("BirdTournaments.Core.UserAggregate.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Participant", b =>
+                {
+                    b.HasOne("BirdTournaments.Core.BirdAggregate.Bird", "Bird")
+                        .WithMany()
+                        .HasForeignKey("BirdId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", "BirdOwner")
+                        .WithMany()
+                        .HasForeignKey("BirdOwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BirdTournaments.Core.ParticipantAggregate.Competition", null)
+                        .WithMany("Participants")
+                        .HasForeignKey("CompetitionId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Bird");
+
+                    b.Navigation("BirdOwner");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Place", b =>
+                {
+                    b.HasOne("BirdTournaments.Core.ParticipantAggregate.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
             modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.ToDoItem", b =>
                 {
                     b.HasOne("BirdTournaments.Core.ProjectAggregate.Project", null)
@@ -290,6 +499,11 @@ namespace BirdTournaments.Infrastructure.Migrations
             modelBuilder.Entity("BirdTournaments.Core.BirdOwnerAggregate.BirdOwner", b =>
                 {
                     b.Navigation("Birds");
+                });
+
+            modelBuilder.Entity("BirdTournaments.Core.ParticipantAggregate.Competition", b =>
+                {
+                    b.Navigation("Participants");
                 });
 
             modelBuilder.Entity("BirdTournaments.Core.ProjectAggregate.Project", b =>

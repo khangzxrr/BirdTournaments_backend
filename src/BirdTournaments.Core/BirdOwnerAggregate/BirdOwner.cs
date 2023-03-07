@@ -14,7 +14,7 @@ public class BirdOwner : EntityBase, IAggregateRoot
 
   public int UserId;
 
-  public User User { get; }
+  public User User { get; private set; }
 
 
   // DDD Patterns comment
@@ -34,19 +34,23 @@ public class BirdOwner : EntityBase, IAggregateRoot
     string name, 
     string address, 
     string phoneNumber,
-    string vipAccountId, 
-    int userId, 
-    User user,
-    List<Bird> birds) { 
+    string vipAccountId) { 
     Name = Guard.Against.NullOrEmpty(name, nameof(name));
     Address = Guard.Against.NullOrEmpty(address, nameof(address));
     PhoneNumber = Guard.Against.NullOrEmpty(phoneNumber, nameof(phoneNumber));
 
     VipAccountId = vipAccountId;
-    UserId = userId;
-
-    User = user;
-    _birds = birds;
+    
   }
 
+  public void AddBird(Bird bird)
+  {
+    Guard.Against.Null(bird, nameof(bird)); 
+    _birds.Add(bird);
+  }
+
+  public void SetUser(User user)
+  {
+    User = Guard.Against.Null(user, nameof(user));
+  }
 }
