@@ -12,12 +12,10 @@ public class Create : EndpointBaseAsync
   .WithRequest<CreateCompetitionRequest>
   .WithActionResult<CompetitionRecord>
 {
-  private readonly IRepository<Competition> _repository;
   private readonly ICompetitionService _competitionService;
 
-  public Create(IRepository<Competition> repository, ICompetitionService competitionService)
+  public Create(ICompetitionService competitionService)
   {
-    _repository = repository;
     _competitionService = competitionService;
   }
 

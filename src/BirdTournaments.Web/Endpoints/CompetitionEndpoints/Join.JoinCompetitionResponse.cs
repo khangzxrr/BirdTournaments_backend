@@ -1,5 +1,5 @@
 ﻿namespace BirdTournaments.Web.Endpoints.CompetitionEndpoints;
 
-public class JoinCompetitionRequest
+public class JoinCompetitionResponse
 {
 }
