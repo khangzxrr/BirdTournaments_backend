@@ -14,6 +14,4 @@ public class CreateCompetitionRequest
   public int birdTypeId { get; set; }
   [Required]
   public int creatorBirdId { get; set; }
-  [Required]
-  public int creatorId { get; set; }
 }

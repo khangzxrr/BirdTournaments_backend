@@ -3114,3 +3114,728 @@ SELECT 1 ELSE SELECT 0
 2023-03-07 23:03:03.750 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.0807ms
 2023-03-07 23:03:04.217 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
 2023-03-07 23:03:04.409 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 191.7027ms
+2023-03-07 23:03:42.479 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:42.539 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:03:42.543 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:42.545 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:03:42.559 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:03:42.573 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:03:42.575 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:03:42.579 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:03:42.612 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:03:42.747 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:03:42.751 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:03:42.753 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:03:42.754 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:03:43.760 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:03:43.831 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:03:44.080 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:03:44.080 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:03:44.093 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 10.4096ms
+2023-03-07 23:03:44.105 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 348.5559ms
+2023-03-07 23:03:44.113 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.8502ms
+2023-03-07 23:03:44.253 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:03:44.413 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 160.0462ms
+2023-03-07 23:04:19.311 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:04:19.372 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:04:19.377 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:04:19.380 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:04:19.396 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:04:19.413 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:04:19.417 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:04:19.432 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:04:19.466 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:04:19.624 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:04:19.627 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:04:19.634 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:04:19.640 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:04:19.995 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:04:20.076 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:04:20.319 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:04:20.319 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:04:20.329 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 9.0323ms
+2023-03-07 23:04:20.332 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 341.6483ms
+2023-03-07 23:04:20.337 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.4806ms
+2023-03-07 23:04:20.823 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:04:20.962 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 139.1832ms
+2023-03-07 23:35:17.762 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:35:17.848 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:35:17.855 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:35:17.858 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:35:17.880 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:35:17.899 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:35:17.902 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:35:17.921 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:35:17.953 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:35:18.091 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:35:18.094 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:35:18.095 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:35:18.097 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:35:18.435 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:35:18.494 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:35:18.758 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:35:18.758 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:35:18.770 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 11.2733ms
+2023-03-07 23:35:18.773 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 340.8232ms
+2023-03-07 23:35:18.785 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.4153ms
+2023-03-07 23:35:19.257 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:35:19.401 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 143.9198ms
+2023-03-07 23:35:28.811 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 50
+2023-03-07 23:35:28.815 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:35:28.824 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:35:28.830 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:35:28.857 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:35:29.302 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:36:44.664 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:36:44.723 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:36:44.728 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:36:44.732 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:36:44.757 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:36:44.773 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:36:44.777 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:36:44.792 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:36:44.826 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:36:44.978 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:36:44.980 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:36:44.981 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:36:44.982 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:36:45.376 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:36:45.435 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:36:45.680 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:36:45.680 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:36:45.695 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 10.4343ms
+2023-03-07 23:36:45.705 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 334.5569ms
+2023-03-07 23:36:45.719 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.0763ms
+2023-03-07 23:36:46.191 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:36:46.341 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.8786ms
+2023-03-07 23:36:49.112 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 50
+2023-03-07 23:36:49.116 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:36:49.118 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:36:49.125 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:36:49.151 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:36:49.546 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:36:49.686 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-03-07 23:36:49.692 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 532.7013ms
+2023-03-07 23:36:49.695 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:36:49.700 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 50 - 400 - text/plain;+charset=utf-8 588.5993ms
+2023-03-07 23:37:21.249 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:21.309 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:37:21.314 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:21.318 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:37:21.334 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:37:21.350 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:37:21.354 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:21.371 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:37:21.409 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:37:21.559 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:37:21.567 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:37:21.568 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:37:21.570 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:37:22.075 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:37:22.129 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:37:22.383 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:37:22.383 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:37:22.398 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 12.5076ms
+2023-03-07 23:37:22.401 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 328.4501ms
+2023-03-07 23:37:22.404 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.2965ms
+2023-03-07 23:37:22.868 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:37:23.051 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.5091ms
+2023-03-07 23:37:31.316 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 56
+2023-03-07 23:37:31.322 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:37:31.324 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:37:31.332 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:37:31.362 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:37:31.754 +07:00 [INF] Executed DbCommand (35ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:37:31.882 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-03-07 23:37:31.889 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 520.6106ms
+2023-03-07 23:37:31.892 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:37:31.896 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 56 - 400 - text/plain;+charset=utf-8 580.1513ms
+2023-03-07 23:37:56.946 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:57.031 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:37:57.036 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:57.039 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:37:57.056 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:37:57.071 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:37:57.075 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:37:57.079 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:37:57.115 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:37:57.261 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:37:57.264 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:37:57.265 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:37:57.267 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:37:57.709 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:37:57.763 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:37:58.013 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:37:58.013 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:37:58.028 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 320.7438ms
+2023-03-07 23:37:58.028 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 12.8537ms
+2023-03-07 23:37:58.038 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.2581ms
+2023-03-07 23:37:58.518 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:37:58.694 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 175.3500ms
+2023-03-07 23:38:11.788 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 50
+2023-03-07 23:38:11.794 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:38:11.796 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:38:11.803 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:38:11.834 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:38:24.191 +07:00 [INF] Executed DbCommand (31ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:38:24.326 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:38:24.333 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 12490.9643ms
+2023-03-07 23:38:24.335 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:38:24.341 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 50 - 404 - text/plain;+charset=utf-8 12552.4676ms
+2023-03-07 23:39:04.721 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:39:04.727 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:39:04.729 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:39:04.730 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:39:04.732 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:39:08.267 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:39:08.339 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:39:08.342 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 3607.6604ms
+2023-03-07 23:39:08.345 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:39:08.347 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 404 - text/plain;+charset=utf-8 3626.9401ms
+2023-03-07 23:39:48.883 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:39:48.889 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:39:48.891 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:39:48.893 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:39:48.896 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:39:51.469 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:41:20.262 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:41:20.360 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:41:20.364 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:41:20.368 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:41:20.389 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:41:20.414 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:41:20.418 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:41:20.441 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:41:20.481 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:41:20.639 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:41:20.641 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:41:20.642 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:41:20.643 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:41:21.386 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:41:21.466 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:41:22.043 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:41:22.071 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:41:22.144 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 711.1045ms
+2023-03-07 23:41:22.155 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 84.0859ms
+2023-03-07 23:41:22.310 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 266.7045ms
+2023-03-07 23:41:22.501 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:41:22.860 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 358.7166ms
+2023-03-07 23:41:28.643 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:41:28.647 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:41:28.648 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:41:28.653 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:41:28.691 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:41:33.652 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@__username_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0
+2023-03-07 23:41:33.987 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse'.
+2023-03-07 23:41:33.996 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 5299.2913ms
+2023-03-07 23:41:34.000 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:41:34.005 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 200 - application/json;+charset=utf-8 5361.9643ms
+2023-03-07 23:42:41.456 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:42:41.536 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:42:41.541 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:42:41.544 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:42:41.565 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:42:41.586 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:42:41.591 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:42:41.617 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:42:41.652 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:42:41.792 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:42:41.794 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:42:41.796 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:42:41.797 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:42:42.324 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:42:42.387 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:42:42.694 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:42:42.694 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:42:42.724 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 20.6334ms
+2023-03-07 23:42:42.732 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 410.9899ms
+2023-03-07 23:42:42.763 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 68.9244ms
+2023-03-07 23:42:42.907 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:42:43.146 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 239.8967ms
+2023-03-07 23:42:50.795 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:42:50.800 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:42:50.801 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:42:50.805 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:50.828 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:42:51.238 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:42:51.353 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:42:51.362 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 526.1801ms
+2023-03-07 23:42:51.369 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:51.376 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 404 - text/plain;+charset=utf-8 581.1262ms
+2023-03-07 23:42:54.551 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 56
+2023-03-07 23:42:54.553 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:42:54.554 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:42:54.557 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:54.559 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:42:54.634 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:42:54.708 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:42:54.711 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 147.7732ms
+2023-03-07 23:42:54.713 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:54.715 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 56 - 404 - text/plain;+charset=utf-8 163.8563ms
+2023-03-07 23:42:56.506 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 56
+2023-03-07 23:42:56.508 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:42:56.510 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:42:56.512 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:56.514 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:42:56.524 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:42:56.593 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:42:56.595 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 77.9324ms
+2023-03-07 23:42:56.598 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:42:56.599 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 56 - 404 - text/plain;+charset=utf-8 93.2579ms
+2023-03-07 23:43:11.652 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 56
+2023-03-07 23:43:11.654 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:43:11.656 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:43:11.658 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:43:11.660 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:43:18.648 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:43:18.718 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:43:18.720 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 7057.4506ms
+2023-03-07 23:43:18.723 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:43:18.725 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 56 - 404 - text/plain;+charset=utf-8 7073.1436ms
+2023-03-07 23:43:24.438 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:43:24.440 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:43:24.441 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:43:24.442 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:43:24.444 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:43:33.633 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:43:33.698 +07:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-03-07 23:43:33.701 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 9253.4973ms
+2023-03-07 23:43:33.703 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:43:33.704 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 404 - text/plain;+charset=utf-8 9265.9980ms
+2023-03-07 23:43:35.697 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:43:35.698 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:43:35.700 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:43:35.702 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:43:35.703 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:44:00.848 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:44:00.915 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:44:00.922 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:44:00.926 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:44:00.949 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:44:00.966 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:44:00.970 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:44:00.983 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:44:01.017 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:44:01.163 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:44:01.166 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:44:01.167 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:44:01.168 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:44:01.821 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:44:01.874 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:44:02.120 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:44:02.123 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:44:02.135 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 13.1817ms
+2023-03-07 23:44:02.138 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 318.7739ms
+2023-03-07 23:44:02.142 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.6789ms
+2023-03-07 23:44:02.620 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:44:02.752 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.7394ms
+2023-03-07 23:44:11.671 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:44:11.675 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:44:11.677 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:44:11.681 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:44:11.705 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:44:15.955 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:44:16.146 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse'.
+2023-03-07 23:44:16.155 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 4443.0938ms
+2023-03-07 23:44:16.158 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:44:16.164 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 200 - application/json;+charset=utf-8 4493.5536ms
+2023-03-07 23:44:37.781 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 23:44:37.786 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:44:37.787 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:44:37.800 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-07 23:44:37.808 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-03-07 23:44:37.810 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 401 0 - 31.4426ms
+2023-03-07 23:44:49.408 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 23:44:49.410 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:44:49.411 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:44:49.414 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-07 23:44:49.416 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-03-07 23:44:49.418 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 401 0 - 10.0327ms
+2023-03-07 23:44:51.504 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 23:44:51.506 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:44:51.508 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:44:51.517 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-07 23:44:51.519 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-03-07 23:44:51.521 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 401 0 - 16.0950ms
+2023-03-07 23:44:52.419 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 23:44:52.425 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:44:52.427 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:44:52.429 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-07 23:44:52.430 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-03-07 23:44:52.431 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 401 0 - 12.1272ms
+2023-03-07 23:47:36.810 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:47:36.873 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:47:36.877 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:47:36.880 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:47:36.897 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:47:36.911 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:47:36.915 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:47:36.929 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:47:36.961 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:47:37.107 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:47:37.110 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:47:37.111 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:47:37.112 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:47:37.807 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:47:37.881 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:47:38.130 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:47:38.130 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:47:38.142 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 5.4379ms
+2023-03-07 23:47:38.145 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 340.0561ms
+2023-03-07 23:47:38.158 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.4167ms
+2023-03-07 23:47:38.622 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:47:38.781 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 158.8352ms
+2023-03-07 23:47:51.465 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:47:51.470 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:47:51.472 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:47:51.478 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:47:51.501 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:47:55.229 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:47:55.425 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse'.
+2023-03-07 23:47:55.433 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 3925.7139ms
+2023-03-07 23:47:55.437 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:47:55.447 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 200 - application/json;+charset=utf-8 3981.6578ms
+2023-03-07 23:48:17.832 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Competitions application/json 97
+2023-03-07 23:48:17.838 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:48:17.839 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:48:17.885 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Create.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:48:17.890 +07:00 [INF] Route matched with {action = "Handle", controller = "Create"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.CompetitionEndpoints.CompetitionRecord]] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.CreateCompetitionRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.Create (BirdTournaments.Web).
+2023-03-07 23:48:17.942 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-03-07 23:48:17.945 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.Create.HandleAsync (BirdTournaments.Web) in 51.8457ms
+2023-03-07 23:48:17.952 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.Create.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:48:17.954 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Competitions application/json 97 - 400 - text/plain;+charset=utf-8 121.2683ms
+2023-03-07 23:54:35.804 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:54:35.887 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:54:35.893 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:54:35.896 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 23:54:35.920 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 23:54:35.938 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 23:54:35.942 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 23:54:35.960 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 23:54:35.993 +07:00 [INF] User profile is available. Using 'C:\Users\khang\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-07 23:54:36.140 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 23:54:36.143 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 23:54:36.145 +07:00 [INF] Hosting environment: Development
+2023-03-07 23:54:36.147 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 23:54:36.820 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 23:54:36.870 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 23:54:37.122 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 23:54:37.125 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 23:54:37.147 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 24.3546ms
+2023-03-07 23:54:37.149 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 333.3418ms
+2023-03-07 23:54:37.162 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.9753ms
+2023-03-07 23:54:37.649 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 23:54:37.828 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.9649ms
+2023-03-07 23:54:44.976 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:57679/Login application/json 53
+2023-03-07 23:54:44.980 +07:00 [INF] CORS policy execution failed.
+2023-03-07 23:54:44.982 +07:00 [INF] Request origin http://localhost:57679 does not have permission to access the resource.
+2023-03-07 23:54:44.988 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:54:45.013 +07:00 [INF] Route matched with {action = "Handle", controller = "Authen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse]] HandleAsync(BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen (BirdTournaments.Web).
+2023-03-07 23:54:45.476 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__username_0='?' (Size = 100), @__password_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Hash], [u].[Role], [u].[Salt], [u].[UserName], [u].[Verify], [b].[Id], [b].[Address], [b].[Name], [b].[PhoneNumber], [b].[UserId]
+FROM [Users] AS [u]
+LEFT JOIN [BirdOwners] AS [b] ON [u].[Id] = [b].[UserId]
+WHERE [u].[UserName] = @__username_0 AND [u].[Hash] = @__password_1
+2023-03-07 23:54:52.349 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.AuthenResponse'.
+2023-03-07 23:54:52.360 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web) in 7339.0177ms
+2023-03-07 23:54:52.364 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.AuthenticationEndpoints.Authen.HandleAsync (BirdTournaments.Web)'
+2023-03-07 23:54:52.372 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:57679/Login application/json 53 - 200 - application/json;+charset=utf-8 7395.7612ms

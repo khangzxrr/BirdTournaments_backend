@@ -16,5 +16,8 @@ public class DefaultCoreModule : Module
 
     builder.RegisterType<CompetitionService>()
         .As<ICompetitionService>().InstancePerLifetimeScope();
+
+    builder.RegisterType<AuthenticationService>()
+        .As<IAuthenticationService>().InstancePerLifetimeScope();
   }
 }

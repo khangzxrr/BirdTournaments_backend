@@ -66,6 +66,12 @@ public class CompetitionService : ICompetitionService
     Guard.Against.Null(bird, nameof(bird));
     Guard.Against.Null(birdOwner, nameof(birdOwner));
 
+    var isBirdBelongToOwner =  birdOwner.Birds.Where(b => b == bird).Count() > 0 ? true : false;
+
+    if (!isBirdBelongToOwner)
+    {
+      throw new Exception("This is not your bird");
+    }
 
     competition.SetStatus(CompetitionStatus.WaitingForOpponent);
     competition.SetModerator(mod!);
