@@ -21,6 +21,8 @@
     <None Remove="UserAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CompetitionAggregate\Events\" />
+    <Folder Include="CompetitionAggregate\Handlers\" />
     <Folder Include="UserAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>

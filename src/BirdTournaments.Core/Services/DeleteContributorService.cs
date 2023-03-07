@@ -1,4 +1,4 @@
-using Ardalis.Result;
+﻿using Ardalis.Result;
 using BirdTournaments.Core.ContributorAggregate;
 using BirdTournaments.Core.ContributorAggregate.Events;
 using BirdTournaments.Core.Interfaces;
@@ -26,6 +26,7 @@ public class DeleteContributorService : IDeleteContributorService
     await _repository.DeleteAsync(aggregateToDelete);
     var domainEvent = new ContributorDeletedEvent(contributorId);
     await _mediator.Publish(domainEvent);
+
     return Result.Success();
   }
 }

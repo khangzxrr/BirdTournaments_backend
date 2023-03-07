@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BirdTournaments.SharedKernel;
+using BirdTournaments.SharedKernel.Interfaces;
 
 namespace BirdTournaments.Core.ParticipantAggregate;
-public class Place: EntityBase
+public class Place: EntityBase, IAggregateRoot
 {
   public string Address { get; }
   public Region Region { get; private set; }

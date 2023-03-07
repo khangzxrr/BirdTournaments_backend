@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Ardalis.GuardClauses;
 using Ardalis.Result;
 using BirdTournaments.Core.BirdAggregate;
+using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.Core.CompetitionAggregate.Specifications;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Core.ParticipantAggregate;
@@ -18,36 +19,69 @@ public class CompetitionService : ICompetitionService
 {
   private readonly IRepository<Competition> _repository;
   private readonly IRepository<Moderator> _moderRepository;
-  private readonly IMediator _mediator;
+  private readonly IRepository<Place> _placeRepository;
+  private readonly IRepository<BirdType> _birdTypeRepository;
+  private readonly IRepository<Bird> _birdRepository;
+  private readonly IRepository<BirdOwner> _birdOwnerRepository;
+
 
   public CompetitionService(
     IRepository<Competition> repository, 
     IRepository<Moderator> moderRepository,
-    IMediator mediator)
+    IRepository<Place> placeRepository,
+    IRepository<BirdType> birdTypeRepository,
+    IRepository<Bird> birdRepository,
+    IRepository<BirdOwner> birdOwnerRepository)
   {
     _repository = repository;
     _moderRepository = moderRepository;
-    _mediator = mediator;
+    
+    _placeRepository = placeRepository;
+    _birdTypeRepository = birdTypeRepository;
+    _birdRepository = birdRepository;
+
+    _birdOwnerRepository = birdOwnerRepository;
   }
 
-  public async Task<Competition> AddNewCompetition(Place place, BirdType birdType)
+  public async Task<Competition> AddNewCompetition(
+    int placeId, 
+    int birdTypeId, 
+    DateTime date, 
+    int creatorBirdId, 
+    int creatorId)
   {
-    var competition = new Competition(DateTime.Now);
+    var competition = new Competition(date);
 
     var moderatorSpec = new ModeratorByNameSpec("match_checker");
     var mod = await _moderRepository.FirstOrDefaultAsync(moderatorSpec);
+    var place = await _placeRepository.GetByIdAsync(placeId);
+    var birdType = await _birdTypeRepository.GetByIdAsync(birdTypeId);
+    var bird = await _birdRepository.GetByIdAsync(creatorBirdId);
+    var birdOwner = await _birdOwnerRepository.GetByIdAsync(creatorId);
 
-    if (mod == null)
-    {
-      return Result<Competition>.Error("moderator is not found! [match_checker]");
-    }
+
+    Guard.Against.Null(mod, nameof(mod));
+    Guard.Against.Null(place, nameof(place));
+    Guard.Against.Null(birdType, nameof(birdType));
+    Guard.Against.Null(bird, nameof(bird));
+    Guard.Against.Null(birdOwner, nameof(birdOwner));
+
 
     competition.SetStatus(CompetitionStatus.WaitingForOpponent);
     competition.SetModerator(mod!);
     competition.SetPlace(place);
     competition.SetBirdType(birdType);
-    
+    competition.SetDate(date);
+
+    var newParticipant = new Participant();
+    newParticipant.SetParticipantStatus(ParticipantStatus.Joined);
+    newParticipant.SetBird(bird);
+    newParticipant.SetBirdOwner(birdOwner);
+
+    competition.AddParticipant(newParticipant);
+
     competition = await _repository.AddAsync(competition);
+
 
     return Result<Competition>.Success(competition);
   }

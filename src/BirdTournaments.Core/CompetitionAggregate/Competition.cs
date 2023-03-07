@@ -12,7 +12,7 @@ namespace BirdTournaments.Core.ParticipantAggregate;
 public class Competition: EntityBase, IAggregateRoot
 {
   public Place Place { get; private set; }
-  public DateTime Date { get; }
+  public DateTime Date { get; private set; }
   public BirdType BirdType { get; private set; }
   public Moderator Moderator { get; private set; }
 
@@ -29,6 +29,11 @@ public class Competition: EntityBase, IAggregateRoot
     Date = date;
   }
 
+
+  public void SetDate(DateTime date)
+  {
+    Date = date;
+  }
   public void AddParticipant(Participant participant)
   {
     participants.Add(participant);
