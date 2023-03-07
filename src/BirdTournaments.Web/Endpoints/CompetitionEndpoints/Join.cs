@@ -1,5 +1,8 @@
 ﻿using Ardalis.ApiEndpoints;
+using Ardalis.GuardClauses;
 using BirdTournaments.Core.Interfaces;
+using BirdTournaments.Web.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -11,12 +14,16 @@ public class Join : EndpointBaseAsync
 {
 
   private readonly ICompetitionService _competitionService;
-  public Join(ICompetitionService competitionService)
+  private readonly ICurrentUserService _currentUserService;
+  public Join(ICompetitionService competitionService, ICurrentUserService currentUserService)
   {
      _competitionService = competitionService;
+    _currentUserService = currentUserService;
   }
 
+  
   [HttpPost(JoinCompetitionRequest.Route)]
+  [Authorize]
   [SwaggerOperation(
     Summary = "Join a competition",
     Description = "Join a competition",
@@ -27,7 +34,11 @@ public class Join : EndpointBaseAsync
   {
     try
     {
-      await _competitionService.AddOpponent(request.CompetitionId, request.BirdId, request.OwnerId);
+      Guard.Against.Null(_currentUserService.BirdOwnerId);
+
+      int birdOwnerId = int.Parse(_currentUserService.BirdOwnerId);
+
+      await _competitionService.AddOpponent(request.CompetitionId, request.BirdId, birdOwnerId);
       return Ok("success");
     }
     catch (Exception ex)

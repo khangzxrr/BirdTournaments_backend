@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BirdOwnerAggregate\Specifications\" />
-    <Folder Include="CompetitionAggregate\Events\" />
     <Folder Include="CompetitionAggregate\Handlers\" />
     <Folder Include="UserAggregate\Events\" />
   </ItemGroup>

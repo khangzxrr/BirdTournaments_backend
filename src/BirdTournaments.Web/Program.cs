@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
+using BirdTournaments.Web.Interfaces;
+using BirdTournaments.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +34,9 @@ string? connectionString = builder.Configuration.GetConnectionString("SqlServerC
 
 builder.Services.AddDbContext(connectionString!);
 
+
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddHttpContextAccessor();
 //Use ApiEndPoint
 //builder.Services.AddFastEndpoints();
 //builder.Services.AddFastEndpointsApiExplorer();

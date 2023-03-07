@@ -18,7 +18,7 @@ public class Competition: EntityBase, IAggregateRoot
 
   public CompetitionStatus Status { get; private set; }
 
-  public readonly List<Participant> participants = new List<Participant>();
+  private readonly List<Participant> participants = new List<Participant>();
   public IReadOnlyCollection<Participant> Participants => participants.AsReadOnly();
 
 #pragma warning disable CS8618

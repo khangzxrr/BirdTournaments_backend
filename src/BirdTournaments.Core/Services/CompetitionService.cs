@@ -8,11 +8,14 @@ using Ardalis.Result;
 using BirdTournaments.Core.BirdAggregate;
 using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.Core.CompetitionAggregate.Specifications;
+using BirdTournaments.Core.ContributorAggregate.Events;
+using BirdTournaments.Core.ContributorAggregate;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Core.ParticipantAggregate;
 using BirdTournaments.Core.ProjectAggregate;
 using BirdTournaments.SharedKernel.Interfaces;
 using MediatR;
+using BirdTournaments.Core.CompetitionAggregate.Events;
 
 namespace BirdTournaments.Core.Services;
 public class CompetitionService : ICompetitionService
@@ -23,7 +26,6 @@ public class CompetitionService : ICompetitionService
   private readonly IRepository<BirdType> _birdTypeRepository;
   private readonly IRepository<Bird> _birdRepository;
   private readonly IRepository<BirdOwner> _birdOwnerRepository;
-
 
   public CompetitionService(
     IRepository<Competition> repository, 
@@ -43,6 +45,16 @@ public class CompetitionService : ICompetitionService
     _birdOwnerRepository = birdOwnerRepository;
   }
 
+  private void verifyBirdBelongToOwner(Bird bird, BirdOwner birdOwner)
+  {
+    var isBirdBelongToOwner = birdOwner.Birds.Where(b => b == bird).Count() > 0 ? true : false;
+
+    if (!isBirdBelongToOwner)
+    {
+      throw new Exception("This is not your bird");
+    }
+  }
+
   public async Task<Competition> AddNewCompetition(
     int placeId, 
     int birdTypeId, 
@@ -59,6 +71,7 @@ public class CompetitionService : ICompetitionService
     var bird = await _birdRepository.GetByIdAsync(creatorBirdId);
     var birdOwner = await _birdOwnerRepository.GetByIdAsync(creatorId);
 
+    
 
     Guard.Against.Null(mod, nameof(mod));
     Guard.Against.Null(place, nameof(place));
@@ -66,12 +79,7 @@ public class CompetitionService : ICompetitionService
     Guard.Against.Null(bird, nameof(bird));
     Guard.Against.Null(birdOwner, nameof(birdOwner));
 
-    var isBirdBelongToOwner =  birdOwner.Birds.Where(b => b == bird).Count() > 0 ? true : false;
-
-    if (!isBirdBelongToOwner)
-    {
-      throw new Exception("This is not your bird");
-    }
+    verifyBirdBelongToOwner(bird, birdOwner);
 
     competition.SetStatus(CompetitionStatus.WaitingForOpponent);
     competition.SetModerator(mod!);
@@ -102,6 +110,13 @@ public class CompetitionService : ICompetitionService
     Guard.Against.Null(bird, nameof(bird));
     Guard.Against.Null(birdOwner, nameof(birdOwner));
 
+    if (competition.Participants.Count == 2 || competition.Status == CompetitionStatus.Happening)
+    {
+      throw new Exception("Competition is happening or full slot");
+    }
+
+    verifyBirdBelongToOwner(bird, birdOwner);
+
     var participant = new Participant();
     participant.SetParticipantStatus(ParticipantStatus.Joined);
     participant.SetBird(bird);
@@ -109,7 +124,11 @@ public class CompetitionService : ICompetitionService
     participant.SetSubmitUrl("");
 
     competition.AddParticipant(participant);
+    competition.SetStatus(CompetitionStatus.Happening);
+
     await _competitionRepository.SaveChangesAsync();
+
+    
 
     return Result.Success();
 

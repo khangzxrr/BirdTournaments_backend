@@ -8,8 +8,6 @@ public class JoinCompetitionRequest
   [Required]  
   public int CompetitionId { get; set; }
   [Required]
-  public int OwnerId { get; set; }
-  [Required]
   public int BirdId { get; set; }
 
 }

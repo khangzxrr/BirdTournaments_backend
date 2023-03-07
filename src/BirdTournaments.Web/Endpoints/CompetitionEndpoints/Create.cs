@@ -10,6 +10,7 @@ using BirdTournaments.Core.UserAggregate;
 using BirdTournaments.Core.BirdOwnerAggregate;
 using System.Security.Claims;
 using Ardalis.GuardClauses;
+using BirdTournaments.Web.Interfaces;
 
 namespace BirdTournaments.Web.Endpoints.CompetitionEndpoints;
 
@@ -18,12 +19,12 @@ public class Create : EndpointBaseAsync
   .WithActionResult<CompetitionRecord>
 {
   private readonly ICompetitionService _competitionService;
-  private readonly IRepository<BirdOwner> _birdOwnerRepository;
+  private readonly ICurrentUserService _currentUserService;
 
-  public Create(ICompetitionService competitionService, IRepository<BirdOwner> birdOwnerRepository)
+  public Create(ICompetitionService competitionService, ICurrentUserService currentUserService)
   {
     _competitionService = competitionService;
-    _birdOwnerRepository = birdOwnerRepository;
+    _currentUserService = currentUserService;
   }
 
   
@@ -46,20 +47,15 @@ public class Create : EndpointBaseAsync
       var date = DateTime.Parse(request.Date!);
 
       //=========== identity 
-      var identity = HttpContext.User.Identity as ClaimsIdentity;
-
-      var birdOwnerIdClaim = identity!.Claims.FirstOrDefault(x => x.Type == "birdOwnerId");
-      Guard.Against.Null(birdOwnerIdClaim, nameof(birdOwnerIdClaim));
-
-      var birdOwnerId = int.Parse(birdOwnerIdClaim.Value!);
+      Guard.Against.Null(_currentUserService.BirdOwnerId);
+      var birdOwnerId = int.Parse(_currentUserService.BirdOwnerId);
       //======================
-
-
 
       var competition = await _competitionService.AddNewCompetition(request.placeId, request.birdTypeId, date, request.creatorBirdId, birdOwnerId);
 
       var response = new CreateCompetitionResponse(
         new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo));
+
       return Ok(response);
 
     }
