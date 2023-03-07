@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using Ardalis.GuardClauses;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Web.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -28,9 +29,20 @@ public class SubmitResult : EndpointBaseAsync
     OperationId = "Competitions.SubmitResult",
     Tags = new[] { "CompetitionEndpoints" }
     )]
-  public override Task<ActionResult> HandleAsync(
+  public override async Task<ActionResult> HandleAsync(
     SubmitResultRequest request, CancellationToken cancellationToken = default)
   {
-    
+    try
+    {
+      int birdOwnerId = _currentUserService.TryParseBirdOwnerId();
+
+      var result = await _competitionService.SubmitCompetitionResult(request.CompetitionId, birdOwnerId, request.IsWin);
+
+      return Ok("submit successfully");
+
+    }catch(Exception ex)
+    {
+      return BadRequest(ex.Message);
+    }
   }
 }

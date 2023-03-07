@@ -6,44 +6,44 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace BirdTournaments.Web.Endpoints.ContributorEndpoints;
 
-public class Create : EndpointBaseAsync
-  .WithRequest<CreateContributorRequest>
-  .WithActionResult<CreateContributorResponse>
-{
-  private readonly IRepository<Contributor> _repository;
+//public class Create : EndpointBaseAsync
+//  .WithRequest<CreateContributorRequest>
+//  .WithActionResult<CreateContributorResponse>
+//{
+//  private readonly IRepository<Contributor> _repository;
 
-  public Create(IRepository<Contributor> repository)
-  {
-    _repository = repository;
-  }
+//  public Create(IRepository<Contributor> repository)
+//  {
+//    _repository = repository;
+//  }
 
-  [HttpPost("/Contributors")]
-  [SwaggerOperation(
-    Summary = "Create a new Contributor",
-    Description = "Create a new Contributor",
-    OperationId = "Contributor.Create",
-    Tags = new[] { "ContributorEndPoints" }
-    )
-   ]
-  public override async Task<ActionResult<CreateContributorResponse>> HandleAsync(
-      CreateContributorRequest request,
-      CancellationToken cancellationToken = new())
-  {
-    if (request.Name == null)
-    {
-      return BadRequest();
-    }
+//  [HttpPost("/Contributors")]
+//  [SwaggerOperation(
+//    Summary = "Create a new Contributor",
+//    Description = "Create a new Contributor",
+//    OperationId = "Contributor.Create",
+//    Tags = new[] { "ContributorEndPoints" }
+//    )
+//   ]
+//  public override async Task<ActionResult<CreateContributorResponse>> HandleAsync(
+//      CreateContributorRequest request,
+//      CancellationToken cancellationToken = new())
+//  {
+//    if (request.Name == null)
+//    {
+//      return BadRequest();
+//    }
 
-    var newContributor = new Contributor(request.Name);
-    var createdContributor = await _repository.AddAsync(newContributor, cancellationToken);
-    var response = new CreateContributorResponse(
-      id: createdContributor.Id,
-      name: createdContributor.Name
-      );
+//    var newContributor = new Contributor(request.Name);
+//    var createdContributor = await _repository.AddAsync(newContributor, cancellationToken);
+//    var response = new CreateContributorResponse(
+//      id: createdContributor.Id,
+//      name: createdContributor.Name
+//      );
 
-    return Ok(response);
+//    return Ok(response);
 
 
-  }
+//  }
 
-}
+//}

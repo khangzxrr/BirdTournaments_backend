@@ -54,7 +54,7 @@ public class Create : EndpointBaseAsync
       var competition = await _competitionService.AddNewCompetition(request.placeId, request.birdTypeId, date, request.creatorBirdId, birdOwnerId);
 
       var response = new CreateCompetitionResponse(
-        new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo));
+        new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo, competition.Status.Name));
 
       return Ok(response);
 

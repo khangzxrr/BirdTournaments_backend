@@ -9,6 +9,6 @@ public class SubmitResultRequest
   public int CompetitionId { get; set; }
   [Required]
   public bool IsWin { get; set; }
-  [RegularExpression(@"(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])")]
-  public string? EvidenceVideoUrl { get; set; }
+  //[RegularExpression(@"(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])")]
+  //public string? EvidenceVideoUrl { get; set; }
 }

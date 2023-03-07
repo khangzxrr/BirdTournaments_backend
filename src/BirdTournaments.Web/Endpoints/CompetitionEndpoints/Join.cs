@@ -34,9 +34,7 @@ public class Join : EndpointBaseAsync
   {
     try
     {
-      Guard.Against.Null(_currentUserService.BirdOwnerId);
-
-      int birdOwnerId = int.Parse(_currentUserService.BirdOwnerId);
+      int birdOwnerId = _currentUserService.TryParseBirdOwnerId();
 
       await _competitionService.AddOpponent(request.CompetitionId, request.BirdId, birdOwnerId);
       return Ok("success");

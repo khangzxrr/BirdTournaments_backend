@@ -8,14 +8,9 @@ using Ardalis.Result;
 using BirdTournaments.Core.BirdAggregate;
 using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.Core.CompetitionAggregate.Specifications;
-using BirdTournaments.Core.ContributorAggregate.Events;
-using BirdTournaments.Core.ContributorAggregate;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Core.ParticipantAggregate;
-using BirdTournaments.Core.ProjectAggregate;
 using BirdTournaments.SharedKernel.Interfaces;
-using MediatR;
-using BirdTournaments.Core.CompetitionAggregate.Events;
 
 namespace BirdTournaments.Core.Services;
 public class CompetitionService : ICompetitionService
@@ -141,5 +136,91 @@ public class CompetitionService : ICompetitionService
     var listCompetitions = await _competitionRepository.ListAsync(competitionSpecs);
 
     return listCompetitions;
+  }
+
+  public async Task<Result> SubmitCompetitionResult(int competitionId, int ownerId, bool isWin)
+  {
+    var competition = await _competitionRepository.GetByIdAsync(competitionId);
+    var birdOwner = await _birdOwnerRepository.GetByIdAsync(ownerId);
+
+    Guard.Against.Null(competition, nameof(competition));
+    Guard.Against.Null(birdOwner, nameof(birdOwner));
+
+    if (competition.Status != CompetitionStatus.Happening)
+    {
+      throw new Exception("This competition state cannot be submitted");
+    }
+
+    var isCompetitionBelongToUser = competition.Participants.Where(p => p.BirdOwner.Id == ownerId).FirstOrDefault() != null ? true : false;
+    if (!isCompetitionBelongToUser)
+    {
+      throw new Exception("This competition is not your");
+    }
+
+    var isUserSubmitted = competition.Participants
+      .Where(p => p.BirdOwner.Id == ownerId &&
+              p.Status != ParticipantStatus.Joined).FirstOrDefault() != null ? true : false;
+    if (isUserSubmitted)
+    {
+      throw new Exception("You have already submitted result");
+    }
+
+    var participant = competition.Participants.Where(p => p.BirdOwner.Id == ownerId).FirstOrDefault();
+    Guard.Against.Null(participant, nameof(participant));
+
+    participant.SetParticipantStatus(isWin ? ParticipantStatus.Win : ParticipantStatus.Lose);
+
+    await _competitionRepository.SaveChangesAsync();
+
+    await PerformCheckingResult(competition);
+
+    return Result.Success();
+  }
+
+  public async Task<Result> PerformCheckingResult(Competition competition)
+  {
+    //check both player has submited result
+    int countWin = 0;
+    int countLose = 0;
+    bool someOneNotSubmited = false;
+    var participants = competition.Participants.ToList();
+    foreach(var participant in participants)
+    {
+      if (participant.Status == ParticipantStatus.Lose)
+      {
+        countLose++;
+      }
+      else if (participant.Status == ParticipantStatus.Win)
+      {
+        countWin++;
+      }
+      else
+      {
+        someOneNotSubmited = true;
+        break;
+      }
+    }
+    
+
+    //if someone is not submited return, without checking anything
+    if (someOneNotSubmited)
+    {
+      return Result.Success();
+    }
+
+
+    if (countWin == countLose) //valid, 1 lose 1 win
+    {
+      competition.SetStatus(CompetitionStatus.Ended);
+      //gant elo
+    }
+    else //someone is cheated
+    {
+      competition.SetStatus(CompetitionStatus.WaitingForVerify);
+    }
+
+    await _competitionRepository.SaveChangesAsync();
+
+    return Result.Success();
   }
 }

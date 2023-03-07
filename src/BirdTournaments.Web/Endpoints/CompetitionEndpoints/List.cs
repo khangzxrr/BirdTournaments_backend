@@ -24,8 +24,8 @@ public class List : EndpointBaseAsync
 
   [HttpGet(GetCompetitionsByRankRequest.Route)]
   [SwaggerOperation(
-    Summary = "Gets a list of all competitions",
-    Description = "Gets a list of all competitions",
+    Summary = "Gets a list of all competitions by rank name",
+    Description = "Gets a list of all competitions by rank name",
     OperationId = "Competition.List",
     Tags = new[] { "CompetitionEndpoints" }
     )]
@@ -45,7 +45,7 @@ public class List : EndpointBaseAsync
     var competitions = await _repository.ListAsync(competitionSpec);
 
     var competitionRecords = competitions
-        .Select(competition => new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo))
+        .Select(competition => new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo, competition.Status.Name))
         .ToList();
     var response = new GetCompetitionsByRankResponse(competitionRecords!);
 
