@@ -36,14 +36,7 @@ public class GetById : EndpointBaseAsync
       return NotFound();
     }
 
-    var competitionRecord = new CompetitionRecord(
-      competition.Id, 
-      competition.Date, 
-      competition.Place.Address, 
-      competition.BirdType.Name, 
-      competition.Participants.First().Bird.Elo, 
-      competition.Status.Name,
-      competition.Participants.First().BirdOwner.Name);
+    var competitionRecord = CompetitionRecord.FromEntity(competition);
     
     return Ok(new GetByIdResponse(competitionRecord));
   }
