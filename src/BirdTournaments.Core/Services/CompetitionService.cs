@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
 using Ardalis.Result;
+using Autofac.Features.OwnedInstances;
 using BirdTournaments.Core.BirdAggregate;
 using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.Core.CompetitionAggregate.Specifications;
@@ -49,6 +51,14 @@ public class CompetitionService : ICompetitionService
       throw new Exception("This is not your bird");
     }
   }
+  private void verifyOwnerBelongToCompetition(Competition competition, int birdOwnerId)
+  {
+    var isCompetitionBelongToUser = competition.Participants.Where(p => p.BirdOwner.Id == birdOwnerId).FirstOrDefault() != null ? true : false;
+    if (!isCompetitionBelongToUser)
+    {
+      throw new Exception("This competition is not your");
+    }
+  }
 
   public async Task<Competition> AddNewCompetition(
     int placeId, 
@@ -90,6 +100,8 @@ public class CompetitionService : ICompetitionService
     competition.AddParticipant(newParticipant);
 
     competition = await _competitionRepository.AddAsync(competition);
+
+    await _competitionRepository.SaveChangesAsync();
 
 
     return Result<Competition>.Success(competition);
@@ -151,13 +163,9 @@ public class CompetitionService : ICompetitionService
       throw new Exception("This competition state cannot be submitted");
     }
 
-    var isCompetitionBelongToUser = competition.Participants.Where(p => p.BirdOwner.Id == ownerId).FirstOrDefault() != null ? true : false;
-    if (!isCompetitionBelongToUser)
-    {
-      throw new Exception("This competition is not your");
-    }
+    verifyOwnerBelongToCompetition(competition, ownerId);
 
-    var isUserSubmitted = competition.Participants
+     var isUserSubmitted = competition.Participants
       .Where(p => p.BirdOwner.Id == ownerId &&
               p.Status != ParticipantStatus.Joined).FirstOrDefault() != null ? true : false;
     if (isUserSubmitted)
@@ -221,6 +229,32 @@ public class CompetitionService : ICompetitionService
 
     await _competitionRepository.SaveChangesAsync();
 
+    return Result.Success();
+  }
+
+  public async Task<Result> SubmitCompetitionEvidence(int competitionId, int ownerId, string evidenceUrl)
+  {
+    var competition = await _competitionRepository.GetByIdAsync(competitionId);
+    var birdOwner = await _birdOwnerRepository.GetByIdAsync(ownerId);
+
+    Guard.Against.Null(competition, nameof(competition));
+    Guard.Against.Null(birdOwner, nameof(birdOwner));
+    Guard.Against.Null(evidenceUrl, nameof(evidenceUrl));
+
+    verifyOwnerBelongToCompetition(competition, ownerId);
+
+    if (competition.Status != CompetitionStatus.WaitingForVerify)
+    {
+      throw new Exception("competition is not in verify state");
+    }
+
+    var participant = competition.Participants.Where(p => p.BirdOwner.Id == ownerId).FirstOrDefault();
+    Guard.Against.Null(participant, nameof(participant));
+
+    participant.SetSubmitUrl(evidenceUrl);
+
+    await _competitionRepository.SaveChangesAsync();
+    
     return Result.Success();
   }
 }

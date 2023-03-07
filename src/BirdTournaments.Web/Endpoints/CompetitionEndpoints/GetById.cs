@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using BirdTournaments.Core.CompetitionAggregate.Specifications;
 using BirdTournaments.Core.ParticipantAggregate;
 using BirdTournaments.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -27,14 +28,22 @@ public class GetById : EndpointBaseAsync
     )]
   public override async Task<ActionResult<GetByIdResponse>> HandleAsync([FromRoute] GetByIdRequest request, CancellationToken cancellationToken = default)
   {
-    var competition = await _competitionsRepository.GetByIdAsync(request.Id);
+    var competitionSpec = new CompetitionByIdSpec(request.Id);
+    var competition = await _competitionsRepository.FirstOrDefaultAsync(competitionSpec);
 
     if (competition == null)
     {
       return NotFound();
     }
 
-    var competitionRecord = new CompetitionRecord(competition.Id, competition.Date, competition.Place.Address, competition.BirdType.Name, competition.Participants.First().Bird.Elo, competition.Status.Name);
+    var competitionRecord = new CompetitionRecord(
+      competition.Id, 
+      competition.Date, 
+      competition.Place.Address, 
+      competition.BirdType.Name, 
+      competition.Participants.First().Bird.Elo, 
+      competition.Status.Name,
+      competition.Participants.First().BirdOwner.Name);
     
     return Ok(new GetByIdResponse(competitionRecord));
   }

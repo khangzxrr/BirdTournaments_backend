@@ -7,5 +7,5 @@ public class GetByIdResponse
     this.competitionRecord = competitionRecord;
   }
 
-  CompetitionRecord competitionRecord { get; set; } 
+  public CompetitionRecord competitionRecord { get; set; } 
 }

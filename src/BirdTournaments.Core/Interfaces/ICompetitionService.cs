@@ -13,6 +13,7 @@ public interface ICompetitionService
   public Task<Competition> AddNewCompetition(int placeId, int birdTypeId, DateTime date, int creatorBirdId, int creatorId);
   public Task<Result> AddOpponent(int competitionId, int birdId, int ownerId);
   public Task<Result> SubmitCompetitionResult(int competitionId, int ownerId, bool isWin);
+  public Task<Result> SubmitCompetitionEvidence(int competitionId, int ownerId, string evidenceUrl);
   public Task<ICollection<Competition>> GetWaitingCompetitionByRank(Rank rank);
   public Task<Result> PerformCheckingResult(Competition competition);
 }
