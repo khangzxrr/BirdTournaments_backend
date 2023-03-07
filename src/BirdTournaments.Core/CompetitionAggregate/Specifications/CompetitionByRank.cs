@@ -10,16 +10,20 @@ using BirdTournaments.Core.ParticipantAggregate;
 namespace BirdTournaments.Core.CompetitionAggregate.Specifications;
 public class CompetitionByRank: Specification<Competition>
 {
-  public CompetitionByRank(Rank? rank)
+  public CompetitionByRank(Rank rank)
   {
     Query
       .Where(c => c.Status == CompetitionStatus.WaitingForOpponent)
-      //.Where(c => c.participants.First().Bird.Rank == rank)
       .Include(c => c.BirdType)
       .Include(c => c.Place)
       .Include(c => c.Participants)
-      .ThenInclude(p => p.Bird);
+      .ThenInclude(p => p.Bird)
+      .Where(c => c.Participants.First().Bird.Rank.Name == rank.Name);
       
+
+      
+
+
 
   }
 }

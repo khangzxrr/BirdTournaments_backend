@@ -1277,3 +1277,559 @@ SELECT 1 ELSE SELECT 0
 2023-03-07 17:30:53.964 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.6508ms
 2023-03-07 17:30:54.069 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
 2023-03-07 17:30:54.185 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 116.0347ms
+2023-03-07 17:51:21.494 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:51:21.579 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:51:21.584 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:51:21.587 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:51:21.608 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 17:51:21.626 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 17:51:21.629 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:51:21.634 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 17:51:21.778 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 17:51:21.781 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 17:51:21.783 +07:00 [INF] Hosting environment: Development
+2023-03-07 17:51:21.783 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 17:51:22.556 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 17:51:22.677 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-03-07 17:51:22.858 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 500 - text/html;+charset=utf-8 303.7145ms
+2023-03-07 17:51:22.862 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 17:51:22.868 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 5.9719ms
+2023-03-07 17:51:22.869 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 17:51:22.895 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.6079ms
+2023-03-07 17:51:23.239 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/favicon.ico - -
+2023-03-07 17:51:23.262 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-03-07 17:51:23.326 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/favicon.ico - - - 500 - text/plain;+charset=utf-8 87.4246ms
+2023-03-07 17:57:45.766 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:57:45.836 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:57:45.841 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:57:45.843 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:57:45.859 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 17:57:45.876 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 17:57:45.880 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:57:45.884 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 17:57:46.021 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 17:57:46.024 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 17:57:46.026 +07:00 [INF] Hosting environment: Development
+2023-03-07 17:57:46.027 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 17:57:46.461 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 17:57:46.530 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-03-07 17:57:46.660 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 500 - text/html;+charset=utf-8 202.3898ms
+2023-03-07 17:57:46.664 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 17:57:46.666 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 17:57:46.674 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 7.0787ms
+2023-03-07 17:57:46.687 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.3956ms
+2023-03-07 17:57:47.127 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/favicon.ico - -
+2023-03-07 17:57:47.130 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The constraint reference 'string' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'.
+   at Microsoft.AspNetCore.Routing.DefaultParameterPolicyFactory.Create(RoutePatternParameterPart parameter, String inlineText)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidate(Endpoint endpoint, Int32 score)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.CreateCandidates(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.AddNode(DfaNode node, DfaState[] states, Int32 exitDestination)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherBuilder.Build()
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher.CreateMatcher(IReadOnlyList`1 endpoints)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|8_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-03-07 17:57:47.145 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/favicon.ico - - - 500 - text/plain;+charset=utf-8 18.7352ms
+2023-03-07 17:58:35.884 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:58:35.970 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:58:35.974 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:58:35.977 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:58:35.996 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 17:58:36.017 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 17:58:36.021 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:58:36.025 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 17:58:36.173 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 17:58:36.176 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 17:58:36.177 +07:00 [INF] Hosting environment: Development
+2023-03-07 17:58:36.178 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 17:58:36.462 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 17:58:36.523 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 17:58:36.566 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 106.3206ms
+2023-03-07 17:58:38.563 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 17:58:38.732 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 17:58:38.734 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 171.0259ms
+2023-03-07 17:58:38.736 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.0969ms
+2023-03-07 17:58:38.742 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 17:58:38.764 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.7882ms
+2023-03-07 17:58:38.861 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 17:58:38.979 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.7976ms
+2023-03-07 17:59:39.042 +07:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:59:39.116 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:59:39.121 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:59:39.124 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 17:59:39.141 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 17:59:39.158 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 17:59:39.161 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 17:59:39.166 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 17:59:39.312 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 17:59:39.315 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 17:59:39.316 +07:00 [INF] Hosting environment: Development
+2023-03-07 17:59:39.317 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 17:59:39.647 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 17:59:39.744 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 17:59:39.796 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 155.9406ms
+2023-03-07 17:59:41.772 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 17:59:41.932 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 17:59:41.934 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 162.5329ms
+2023-03-07 17:59:41.936 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 3.9124ms
+2023-03-07 17:59:41.943 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 17:59:41.958 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.0800ms
+2023-03-07 17:59:42.071 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 17:59:42.171 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 99.8980ms
+2023-03-07 17:59:52.064 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Projects/1 - -
+2023-03-07 17:59:52.068 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.ProjectEndpoints.GetById.HandleAsync (BirdTournaments.Web)'
+2023-03-07 17:59:52.101 +07:00 [INF] Route matched with {action = "Handle", controller = "GetById"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.ProjectEndpoints.GetProjectByIdResponse]] HandleAsync(BirdTournaments.Web.Endpoints.ProjectEndpoints.GetProjectByIdRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.ProjectEndpoints.GetById (BirdTournaments.Web).
+2023-03-07 17:59:52.565 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@__projectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t].[Priority], [t0].[Id], [t0].[ContributorId], [t0].[Description], [t0].[IsDone], [t0].[ProjectId], [t0].[Title]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Name], [p].[Priority]
+    FROM [Projects] AS [p]
+    WHERE [p].[Id] = @__projectId_0
+) AS [t]
+LEFT JOIN [ToDoItems] AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id]
+2023-03-07 17:59:52.723 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.ProjectEndpoints.GetProjectByIdResponse'.
+2023-03-07 17:59:52.738 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.ProjectEndpoints.GetById.HandleAsync (BirdTournaments.Web) in 629.2004ms
+2023-03-07 17:59:52.741 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.ProjectEndpoints.GetById.HandleAsync (BirdTournaments.Web)'
+2023-03-07 17:59:52.747 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Projects/1 - - - 200 - application/json;+charset=utf-8 683.1277ms
+2023-03-07 18:00:26.071 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:00:26.135 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:00:26.141 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:00:26.145 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:00:26.166 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 18:00:26.183 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 18:00:26.186 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:00:26.191 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 18:00:26.340 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 18:00:26.344 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 18:00:26.345 +07:00 [INF] Hosting environment: Development
+2023-03-07 18:00:26.346 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 18:00:26.858 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 18:00:26.927 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 18:00:26.972 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 114.7985ms
+2023-03-07 18:00:29.111 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 18:00:29.270 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 18:00:29.272 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 161.2053ms
+2023-03-07 18:00:29.274 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.5494ms
+2023-03-07 18:00:29.282 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 18:00:29.299 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.3838ms
+2023-03-07 18:00:29.404 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 18:00:29.508 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.7944ms
+2023-03-07 18:00:35.647 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Competitions/silver - -
+2023-03-07 18:00:35.651 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:00:35.679 +07:00 [INF] Route matched with {action = "Handle", controller = "List"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse]] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.List (BirdTournaments.Web).
+2023-03-07 18:00:36.056 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[MinElo], [r].[Name]
+FROM [Ranks] AS [r]
+WHERE [r].[Name] = @__name_0
+2023-03-07 18:00:36.238 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web) in 550.8168ms
+2023-03-07 18:00:36.243 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:00:36.246 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The LINQ expression 'DbSet<Competition>()
+    .Where(c => c.Status == WaitingForOpponent)
+    .Where(c => c.participants
+        .Select(s => s.Bird.Rank)
+        .First() == __rank_0)' could not be translated. Additional information: Translation of member 'participants' on entity type 'Competition' failed. This commonly occurs when the specified member is unmapped. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0&)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.RelationalQueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.IncludableQueryable`2.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.ListAsync(ISpecification`1 specification, CancellationToken cancellationToken)
+   at BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync(GetCompetitionsByRankRequest request, CancellationToken cancellationToken) in C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web\Endpoints\CompetitionEndpoints\List.cs:line 45
+   at lambda_method349(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-03-07 18:00:36.337 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Competitions/silver - - - 500 - text/plain;+charset=utf-8 689.6729ms
+2023-03-07 18:02:40.014 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:02:40.081 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:02:40.087 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:02:40.091 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:02:40.110 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 18:02:40.127 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 18:02:40.132 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:02:40.137 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 18:02:40.262 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 18:02:40.266 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 18:02:40.268 +07:00 [INF] Hosting environment: Development
+2023-03-07 18:02:40.270 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 18:02:40.822 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 18:02:40.897 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 18:02:40.941 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 120.9434ms
+2023-03-07 18:02:42.995 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 18:02:43.167 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 18:02:43.169 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 174.4400ms
+2023-03-07 18:02:43.171 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.2025ms
+2023-03-07 18:02:43.178 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 18:02:43.192 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.6579ms
+2023-03-07 18:02:43.306 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 18:02:43.408 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 102.5349ms
+2023-03-07 18:02:49.617 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Competitions/silver - -
+2023-03-07 18:02:49.622 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:02:49.651 +07:00 [INF] Route matched with {action = "Handle", controller = "List"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse]] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.List (BirdTournaments.Web).
+2023-03-07 18:02:50.027 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@__name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[MinElo], [r].[Name]
+FROM [Ranks] AS [r]
+WHERE [r].[Name] = @__name_0
+2023-03-07 18:02:50.194 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status], [b].[Id], [b].[Name], [p].[Id], [p].[Address], [p].[RegionId], [t].[Id], [t].[BirdId], [t].[BirdOwnerId], [t].[CompetitionId], [t].[EloGain], [t].[Status], [t].[SubmitUrl], [t].[Id0], [t].[BirdOwnerId0], [t].[BirdTypeId], [t].[Elo], [t].[Image], [t].[Name], [t].[RankId]
+FROM [Competitions] AS [c]
+INNER JOIN [BirdTypes] AS [b] ON [c].[BirdTypeId] = [b].[Id]
+INNER JOIN [Places] AS [p] ON [c].[PlaceId] = [p].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[BirdId], [p0].[BirdOwnerId], [p0].[CompetitionId], [p0].[EloGain], [p0].[Status], [p0].[SubmitUrl], [b0].[Id] AS [Id0], [b0].[BirdOwnerId] AS [BirdOwnerId0], [b0].[BirdTypeId], [b0].[Elo], [b0].[Image], [b0].[Name], [b0].[RankId]
+    FROM [Participants] AS [p0]
+    INNER JOIN [Birds] AS [b0] ON [p0].[BirdId] = [b0].[Id]
+) AS [t] ON [c].[Id] = [t].[CompetitionId]
+WHERE [c].[Status] = 0
+ORDER BY [c].[Id], [b].[Id], [p].[Id], [t].[Id]
+2023-03-07 18:02:50.306 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse'.
+2023-03-07 18:02:50.324 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web) in 666.3519ms
+2023-03-07 18:02:50.328 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:02:50.334 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Competitions/silver - - - 200 - application/json;+charset=utf-8 717.3503ms
+2023-03-07 18:04:03.932 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:04:04.006 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:04:04.010 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:04:04.013 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-07 18:04:04.029 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-07 18:04:04.044 +07:00 [INF] No migrations were applied. The database is already up to date.
+2023-03-07 18:04:04.047 +07:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-07 18:04:04.053 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-03-07 18:04:04.188 +07:00 [INF] Now listening on: http://localhost:57679
+2023-03-07 18:04:04.191 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-07 18:04:04.193 +07:00 [INF] Hosting environment: Development
+2023-03-07 18:04:04.194 +07:00 [INF] Content root path: C:\Users\khang\source\repos\khangzxrr\BirdTournaments\src\BirdTournaments.Web
+2023-03-07 18:04:04.531 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/ - -
+2023-03-07 18:04:04.633 +07:00 [WRN] Failed to determine the https port for redirect.
+2023-03-07 18:04:04.680 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/ - - - 404 0 - 153.1868ms
+2023-03-07 18:04:07.162 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 18:04:07.336 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 18:04:07.338 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 175.6872ms
+2023-03-07 18:04:07.341 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 4.2153ms
+2023-03-07 18:04:07.346 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 18:04:07.366 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.3922ms
+2023-03-07 18:04:07.465 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 18:04:07.575 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.6174ms
+2023-03-07 18:04:07.793 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html/ - -
+2023-03-07 18:04:07.795 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html/ - - - 404 0 - 2.4578ms
+2023-03-07 18:04:09.172 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html/ - -
+2023-03-07 18:04:09.175 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html/ - - - 404 0 - 2.6202ms
+2023-03-07 18:04:10.668 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-03-07 18:04:10.687 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 18.5649ms
+2023-03-07 18:04:10.701 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - -
+2023-03-07 18:04:10.704 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/aspnetcore-browser-refresh.js - - - 200 12008 application/javascript;+charset=utf-8 3.3261ms
+2023-03-07 18:04:10.712 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_vs/browserLink - -
+2023-03-07 18:04:10.727 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.2119ms
+2023-03-07 18:04:10.831 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-03-07 18:04:10.837 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6.1235ms
+2023-03-07 18:04:15.522 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Competitions/silver - -
+2023-03-07 18:04:15.527 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:04:15.555 +07:00 [INF] Route matched with {action = "Handle", controller = "List"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse]] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.List (BirdTournaments.Web).
+2023-03-07 18:04:15.929 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@__name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[MinElo], [r].[Name]
+FROM [Ranks] AS [r]
+WHERE [r].[Name] = @__name_0
+2023-03-07 18:04:16.160 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[@__rank_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status], [b0].[Id], [b0].[Name], [p0].[Id], [p0].[Address], [p0].[RegionId], [t].[Id], [t].[BirdId], [t].[BirdOwnerId], [t].[CompetitionId], [t].[EloGain], [t].[Status], [t].[SubmitUrl], [t].[Id0], [t].[BirdOwnerId0], [t].[BirdTypeId], [t].[Elo], [t].[Image], [t].[Name], [t].[RankId]
+FROM [Competitions] AS [c]
+INNER JOIN [BirdTypes] AS [b0] ON [c].[BirdTypeId] = [b0].[Id]
+INNER JOIN [Places] AS [p0] ON [c].[PlaceId] = [p0].[Id]
+LEFT JOIN (
+    SELECT [p1].[Id], [p1].[BirdId], [p1].[BirdOwnerId], [p1].[CompetitionId], [p1].[EloGain], [p1].[Status], [p1].[SubmitUrl], [b1].[Id] AS [Id0], [b1].[BirdOwnerId] AS [BirdOwnerId0], [b1].[BirdTypeId], [b1].[Elo], [b1].[Image], [b1].[Name], [b1].[RankId]
+    FROM [Participants] AS [p1]
+    INNER JOIN [Birds] AS [b1] ON [p1].[BirdId] = [b1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompetitionId]
+WHERE [c].[Status] = 0 AND (
+    SELECT TOP(1) [r].[Name]
+    FROM [Participants] AS [p]
+    INNER JOIN [Birds] AS [b] ON [p].[BirdId] = [b].[Id]
+    INNER JOIN [Ranks] AS [r] ON [b].[RankId] = [r].[Id]
+    WHERE [c].[Id] = [p].[CompetitionId]) = @__rank_Name_0
+ORDER BY [c].[Id], [b0].[Id], [p0].[Id], [t].[Id]
+2023-03-07 18:04:16.266 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse'.
+2023-03-07 18:04:16.285 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web) in 722.3845ms
+2023-03-07 18:04:16.289 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:04:16.298 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Competitions/silver - - - 200 - application/json;+charset=utf-8 775.4423ms
+2023-03-07 18:04:20.594 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:57679/Competitions/gold - -
+2023-03-07 18:04:20.596 +07:00 [INF] Executing endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:04:20.599 +07:00 [INF] Route matched with {action = "Handle", controller = "List"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse]] HandleAsync(BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankRequest, System.Threading.CancellationToken) on controller BirdTournaments.Web.Endpoints.CompetitionEndpoints.List (BirdTournaments.Web).
+2023-03-07 18:04:20.663 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[MinElo], [r].[Name]
+FROM [Ranks] AS [r]
+WHERE [r].[Name] = @__name_0
+2023-03-07 18:04:20.672 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__rank_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BirdTypeId], [c].[Date], [c].[ModeratorId], [c].[PlaceId], [c].[Status], [b0].[Id], [b0].[Name], [p0].[Id], [p0].[Address], [p0].[RegionId], [t].[Id], [t].[BirdId], [t].[BirdOwnerId], [t].[CompetitionId], [t].[EloGain], [t].[Status], [t].[SubmitUrl], [t].[Id0], [t].[BirdOwnerId0], [t].[BirdTypeId], [t].[Elo], [t].[Image], [t].[Name], [t].[RankId]
+FROM [Competitions] AS [c]
+INNER JOIN [BirdTypes] AS [b0] ON [c].[BirdTypeId] = [b0].[Id]
+INNER JOIN [Places] AS [p0] ON [c].[PlaceId] = [p0].[Id]
+LEFT JOIN (
+    SELECT [p1].[Id], [p1].[BirdId], [p1].[BirdOwnerId], [p1].[CompetitionId], [p1].[EloGain], [p1].[Status], [p1].[SubmitUrl], [b1].[Id] AS [Id0], [b1].[BirdOwnerId] AS [BirdOwnerId0], [b1].[BirdTypeId], [b1].[Elo], [b1].[Image], [b1].[Name], [b1].[RankId]
+    FROM [Participants] AS [p1]
+    INNER JOIN [Birds] AS [b1] ON [p1].[BirdId] = [b1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompetitionId]
+WHERE [c].[Status] = 0 AND (
+    SELECT TOP(1) [r].[Name]
+    FROM [Participants] AS [p]
+    INNER JOIN [Birds] AS [b] ON [p].[BirdId] = [b].[Id]
+    INNER JOIN [Ranks] AS [r] ON [b].[RankId] = [r].[Id]
+    WHERE [c].[Id] = [p].[CompetitionId]) = @__rank_Name_0
+ORDER BY [c].[Id], [b0].[Id], [p0].[Id], [t].[Id]
+2023-03-07 18:04:20.679 +07:00 [INF] Executing OkObjectResult, writing value of type 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.GetCompetitionsByRankResponse'.
+2023-03-07 18:04:20.681 +07:00 [INF] Executed action BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web) in 79.2603ms
+2023-03-07 18:04:20.688 +07:00 [INF] Executed endpoint 'BirdTournaments.Web.Endpoints.CompetitionEndpoints.List.HandleAsync (BirdTournaments.Web)'
+2023-03-07 18:04:20.691 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:57679/Competitions/gold - - - 200 - application/json;+charset=utf-8 96.4711ms
