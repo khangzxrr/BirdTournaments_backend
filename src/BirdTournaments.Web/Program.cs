@@ -33,7 +33,8 @@ string? connectionString = builder.Configuration.GetConnectionString("SqlServerC
 
 if (builder.Environment.IsProduction())
 {
-  connectionString = "SQLCONNSTR_SERVER_STAGING";
+  connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SERVER_STAGING");
+  Console.WriteLine(connectionString);
 }
 
 
