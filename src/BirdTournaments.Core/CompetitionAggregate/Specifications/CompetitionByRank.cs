@@ -18,6 +18,8 @@ public class CompetitionByRank: Specification<Competition>
       .Include(c => c.Place)
       .Include(c => c.Participants)
       .ThenInclude(p => p.Bird)
+      .Include(c => c.Participants)
+      .ThenInclude(p => p.BirdOwner)
       .Where(c => c.Participants.First().Bird.Rank.Name == rank.Name);
       
 
