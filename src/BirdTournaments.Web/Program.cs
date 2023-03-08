@@ -29,11 +29,11 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 
 builder.Configuration.AddEnvironmentVariables();
 
-string? connectionString = builder.Configuration.GetConnectionString("SqlServerConnection");  //Configuration.GetConnectionString("DefaultConnection");
+string? connectionString = builder.Configuration.GetConnectionString("AzureConnection");  //Configuration.GetConnectionString("DefaultConnection");
 
 if (builder.Environment.IsProduction())
 {
-  connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SERVER_STAGING");
+  connectionString = builder.Configuration.GetConnectionString("SQLAZURECONNSTR_SERVER_STAGING");
   Console.WriteLine(connectionString);
 }
 
