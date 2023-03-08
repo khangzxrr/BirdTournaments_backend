@@ -11,7 +11,7 @@ public class ParticipantStatus: SmartEnum<ParticipantStatus>
   public static readonly ParticipantStatus Joined = new(nameof(Joined), 0);
   public static readonly ParticipantStatus Submited = new(nameof(Submited), 1);
   public static readonly ParticipantStatus Win = new(nameof(Win), 2);
-  public static readonly ParticipantStatus Lose = new(nameof(Lose), 2);
+  public static readonly ParticipantStatus Lose = new(nameof(Lose), 3);
 
   protected ParticipantStatus(string name, int value) : base(name, value) { }
 

@@ -16,4 +16,5 @@ public interface ICompetitionService
   public Task<Result> SubmitCompetitionEvidence(int competitionId, int ownerId, string evidenceUrl);
   public Task<ICollection<Competition>> GetWaitingCompetitionByRank(Rank rank);
   public Task<Result> PerformCheckingResult(Competition competition);
+  public Task<Result> SetWinnerCompetition(int competitionId, int winnerId, int loserId);
 }

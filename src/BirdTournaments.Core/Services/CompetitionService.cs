@@ -53,7 +53,9 @@ public class CompetitionService : ICompetitionService
   }
   private void verifyOwnerBelongToCompetition(Competition competition, int birdOwnerId)
   {
-    var isCompetitionBelongToUser = competition.Participants.Where(p => p.BirdOwner.Id == birdOwnerId).FirstOrDefault() != null ? true : false;
+    var birdOwner = competition.Participants.Where(p => p.BirdOwner.Id == birdOwnerId).FirstOrDefault();
+
+    var isCompetitionBelongToUser = birdOwner != null ? true : false;
     if (!isCompetitionBelongToUser)
     {
       throw new Exception("This competition is not your");
@@ -152,11 +154,10 @@ public class CompetitionService : ICompetitionService
 
   public async Task<Result> SubmitCompetitionResult(int competitionId, int ownerId, bool isWin)
   {
-    var competition = await _competitionRepository.GetByIdAsync(competitionId);
-    var birdOwner = await _birdOwnerRepository.GetByIdAsync(ownerId);
+    var competitionSpec = new CompetitionByIdSpec(competitionId);
+    var competition = await _competitionRepository.FirstOrDefaultAsync(competitionSpec);
 
     Guard.Against.Null(competition, nameof(competition));
-    Guard.Against.Null(birdOwner, nameof(birdOwner));
 
     if (competition.Status != CompetitionStatus.Happening)
     {
@@ -255,6 +256,25 @@ public class CompetitionService : ICompetitionService
 
     await _competitionRepository.SaveChangesAsync();
     
+    return Result.Success();
+  }
+
+  public async Task<Result> SetWinnerCompetition(int competitionId, int winnerId, int loserId)
+  {
+    var competitionSpec = new CompetitionByIdSpec(competitionId);
+    var competition = await _competitionRepository.FirstOrDefaultAsync(competitionSpec);
+
+    Guard.Against.Null(competition);
+
+    verifyOwnerBelongToCompetition(competition, winnerId);
+    verifyOwnerBelongToCompetition(competition, loserId);
+
+    var winnerParticipant = competition.Participants.Where(p => p.BirdOwner.Id == winnerId).FirstOrDefault();
+    winnerParticipant!.SetParticipantStatus(ParticipantStatus.Win);
+
+    var loserParticipant = competition.Participants.Where(p => p.BirdOwner.Id == loserId).FirstOrDefault();
+    loserParticipant!.SetParticipantStatus(ParticipantStatus.Lose);
+
     return Result.Success();
   }
 }
