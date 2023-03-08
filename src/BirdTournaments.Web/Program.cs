@@ -5,16 +5,12 @@ using BirdTournaments.Core;
 using BirdTournaments.Infrastructure;
 using BirdTournaments.Infrastructure.Data;
 using BirdTournaments.Web;
-using FastEndpoints;
-using FastEndpoints.Swagger.Swashbuckle;
-using FastEndpoints.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.Extensions.DependencyInjection;
 using BirdTournaments.Web.Interfaces;
 using BirdTournaments.Web.Services;
 
@@ -36,6 +32,8 @@ builder.Services.AddDbContext(connectionString!);
 
 
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+
 builder.Services.AddHttpContextAccessor();
 //Use ApiEndPoint
 //builder.Services.AddFastEndpoints();

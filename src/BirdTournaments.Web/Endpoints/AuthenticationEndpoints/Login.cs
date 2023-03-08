@@ -4,51 +4,26 @@ using System.Text;
 using Ardalis.ApiEndpoints;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Core.UserAggregate;
+using BirdTournaments.Web.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace BirdTournaments.Web.Endpoints.AuthenticationEndpoints;
 
-public class Authen : EndpointBaseAsync
+public class AuthenLogin : EndpointBaseAsync
   .WithRequest<AuthenRequest>
   .WithActionResult<AuthenResponse>
 {
 
   private readonly IAuthenticationService _authenticationService;
-  private readonly IConfiguration _configuration;
-  public Authen(IAuthenticationService authenticationService, IConfiguration configuration)
+  private readonly ITokenService _tokenService;
+  public AuthenLogin(IAuthenticationService authenticationService, ITokenService tokenService)
   {
     _authenticationService = authenticationService;
-    _configuration = configuration;
+    _tokenService = tokenService;
   }
 
-  private string GenerateToken(User user)
-  {
-    string key = _configuration["Jwt:Key"]!;
-    string issuer = _configuration["Jwt:Issuer"]!;
-    string audience = _configuration["Jwt:Audience"]!;
-
-    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-    var claims = new[]
-    {
-      new Claim(ClaimTypes.NameIdentifier,user.UserName),
-      new Claim(ClaimTypes.Role, user.Role.Name),
-      new Claim("birdOwnerId", (user.BirdOwner == null) ? "" : user.BirdOwner.Id.ToString())
-    };
-
-     var token = new JwtSecurityToken(
-      issuer, 
-      audience, 
-      claims, 
-      expires: DateTime.Now.AddMinutes(90),
-      signingCredentials: credentials);
-
-    return new JwtSecurityTokenHandler().WriteToken(token);
-
-  }
 
   [HttpPost("/Login")]
   [SwaggerOperation(
@@ -63,7 +38,7 @@ public class Authen : EndpointBaseAsync
     try
     {
       var user = await _authenticationService.AuthenticationAsync(request.Username, request.Password);
-      string token = GenerateToken(user);
+      string token = _tokenService.GenerateToken(user);
 
       var response = new AuthenResponse(token);
 

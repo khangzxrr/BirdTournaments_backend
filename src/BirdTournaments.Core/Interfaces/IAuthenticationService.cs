@@ -10,4 +10,5 @@ namespace BirdTournaments.Core.Interfaces;
 public interface IAuthenticationService
 {
   public Task<Result<User>> AuthenticationAsync(string username, string password);
+  public Task<Result<User>> CreateNewUserAsync(string username, string password, string email);
 }
