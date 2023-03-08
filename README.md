@@ -1,4 +1,4 @@
-# Clean Architecture
+# Bird Tournaments - Clean Architecture
 
 A starting point for Clean Architecture with ASP.NET Core. [Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) is just the latest in a series of names for the same loosely-coupled, dependency-inverted architecture. You will also find it named [hexagonal](http://alistair.cockburn.us/Hexagonal+architecture), [ports-and-adapters](http://www.dossier-andreas.net/software_architecture/ports_and_adapters.html), or [onion architecture](http://jeffreypalermo.com/blog/the-onion-architecture-part-1/).
 
@@ -6,47 +6,30 @@ This architecture is used in the [DDD Fundamentals course](https://www.pluralsig
 
 # Getting Started
 
-To use this template, there are a few options:
+- clone this repository to your local machine
+- open with visual studio 
+- click "Build" => "Build Solution"
+- config database connection string from src\BirdTournaments.Web\appsettings.json
+`
+"SqlServerConnection": "YOUR_CONNECTION_STRING"
+`
 
-- Install using `dotnet new` (preferred - see below)
-- [Install the Visual Studio Template](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.CleanArchitecture) and use it within Visual Studio
-- Download this Repository
 
-These are all covered below.
+After build the solution, start to migrate or restore the database
+
+
+
+## Restore from bak file
+- [download the bak file from this link](https://github.com/khangzxrr/BirdTournaments_backend/blob/master/src/BirdTournaments.Web/BirdTournaments.bak)
+- restore bak file to database using sql server management studio (2019 up)
+
+**if restore from bak file is not working for you, you can run migration below**
 
 ## Running Migrations
 
 In Visual Studio, open the Package Manager Console, and run `Add-Migration ModifyUserVerify -StartupProject BirdTournaments.Web -Context AppDbContext -Project BirdTournaments.Infrastructure`.
 
 `Update-Database -StartupProject BirdTournaments.Web -Context AppDbContext -Project BirdTournaments.Infrastructure`
-
-To use SqlServer, change `options.UseSqlite(connectionString));` to `options.UseSqlServer(connectionString));` in the `Your.ProjectName.Infrastructure.StartupSetup` file. Also remember to replace the `SqliteConnection` with `DefaultConnection` in the `Your.ProjectName.Web.Program` file, which points to your Database Server.
-
-# Goals
-
-The goal of this repository is to provide a basic solution structure that can be used to build Domain-Driven Design (DDD)-based or simply well-factored, SOLID applications using .NET Core. Learn more about these topics here:
-
-- [SOLID Principles for C# Developers](https://www.pluralsight.com/courses/csharp-solid-principles)
-- [SOLID Principles of Object Oriented Design](https://www.pluralsight.com/courses/principles-oo-design) (the original, longer course)
-- [Domain-Driven Design Fundamentals](https://www.pluralsight.com/courses/domain-driven-design-fundamentals)
-
-If you're used to building applications as single-project or as a set of projects that follow the traditional UI -> Business Layer -> Data Access Layer "N-Tier" architecture, I recommend you check out these two courses (ideally before DDD Fundamentals):
-
-- [Creating N-Tier Applications in C#, Part 1](https://www.pluralsight.com/courses/n-tier-apps-part1)
-- [Creating N-Tier Applications in C#, Part 2](https://www.pluralsight.com/courses/n-tier-csharp-part2)
-
-I also maintain Microsoft's reference application, eShopOnWeb, and its associated free eBook. Check them out here:
-
-- [eShopOnWeb on GitHub](https://github.com/dotnet-architecture/eShopOnWeb)
-- [Architecting Modern Web Applications with ASP.NET Core and Microsoft Azure](https://aka.ms/webappebook) (eBook)
-
-## History and Shameless Plug Section
-
-I've used this starter kit to teach the basics of ASP.NET Core using Domain-Driven Design concepts and patterns for some time now (starting when ASP.NET Core was still in pre-release). Typically I teach a one- or two-day hands-on workshop ahead of events like DevIntersection, or private on-site workshops for companies looking to bring their teams up to speed with the latest development technologies and techniques. Feel free to [contact me](https://ardalis.com/contact-us) if you'd like information about upcoming workshops.
-
-# Design Decisions and Dependencies
-
-The goal of this sample is to provide a fairly bare-bones starter kit for new projects. It does not include every possible framework, tool, or feature that a particular enterprise application might benefit from. Its choices of technology for things like data access are rooted in what is the most common, accessible technology for most business software developers using Microsoft's technology stack. It doesn't (currently) include extensive support for things like logging, monitoring, or analytics, though these can all be added easily. Below is a list of the technology dependencies it includes, and why they were chosen. Most of these can easily be swapped out for your technology of choice, since the nature of this architecture is to support modularity and encapsulation.
 
 ## The Core Project
 
