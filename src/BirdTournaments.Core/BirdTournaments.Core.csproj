@@ -22,7 +22,6 @@
     <None Remove="UserAggregate\Events\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BirdOwnerAggregate\Specifications\" />
     <Folder Include="CompetitionAggregate\Handlers\" />
     <Folder Include="UserAggregate\Events\" />
   </ItemGroup>
