@@ -1,8 +1,6 @@
 ﻿using Ardalis.ApiEndpoints;
-using Ardalis.GuardClauses;
 using BirdTournaments.Core.Interfaces;
 using BirdTournaments.Web.Interfaces;
-using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
