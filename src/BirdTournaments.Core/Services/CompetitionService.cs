@@ -275,6 +275,8 @@ public class CompetitionService : ICompetitionService
     var loserParticipant = competition.Participants.Where(p => p.BirdOwner.Id == loserId).FirstOrDefault();
     loserParticipant!.SetParticipantStatus(ParticipantStatus.Lose);
 
+    await _competitionRepository.SaveChangesAsync();
+
     return Result.Success();
   }
 }
