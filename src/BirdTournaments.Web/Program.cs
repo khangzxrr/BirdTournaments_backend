@@ -26,7 +26,16 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
   options.MinimumSameSitePolicy = SameSiteMode.None;
 });
 
+
+builder.Configuration.AddEnvironmentVariables();
+
 string? connectionString = builder.Configuration.GetConnectionString("SqlServerConnection");  //Configuration.GetConnectionString("DefaultConnection");
+
+if (builder.Environment.IsProduction())
+{
+  connectionString = "SQLCONNSTR_SERVER_STAGING";
+}
+
 
 builder.Services.AddDbContext(connectionString!);
 
