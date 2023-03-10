@@ -20,6 +20,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 //builder.Host.UseSerilog((_, config) => config.ReadFrom.Configuration(builder.Configuration));
 
+
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
   options.CheckConsentNeeded = context => true;
@@ -71,7 +72,7 @@ builder.Services.AddCors(options =>
   options.AddPolicy(name: CORS_POLICY,
                     corsPolicyBuilder =>
                     {
-                      corsPolicyBuilder.WithOrigins("localhost");
+                      corsPolicyBuilder.WithOrigins("localhost:5173");
                       corsPolicyBuilder.AllowAnyMethod();
                       corsPolicyBuilder.AllowAnyHeader();
                     });
