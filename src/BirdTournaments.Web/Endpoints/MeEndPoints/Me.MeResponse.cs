@@ -2,12 +2,10 @@
 
 public class MeResponse
 {
-  public IEnumerable<BirdRecord> BirdRecords { get; set; }
-  public BirdOwnerRecord BirdOwnerRecord { get; set; }
+  public BaseUserRecord BaseUserRecord { get; set; }
 
-  public MeResponse(IEnumerable<BirdRecord> records, BirdOwnerRecord birdOwnerRecord)
+  public MeResponse(BaseUserRecord baseUserRecord)
   {
-    BirdRecords = records;
-    BirdOwnerRecord = birdOwnerRecord;
+    BaseUserRecord = baseUserRecord; 
   }
 }

@@ -29,7 +29,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Endpoints\MeBirdEndPoints\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   

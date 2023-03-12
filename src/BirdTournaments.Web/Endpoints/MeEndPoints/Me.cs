@@ -1,6 +1,8 @@
 ﻿using Ardalis.ApiEndpoints;
 using BirdTournaments.Core.BirdOwnerAggregate;
 using BirdTournaments.Core.BirdOwnerAggregate.Specifications;
+using BirdTournaments.Core.UserAggregate;
+using BirdTournaments.Core.UserAggregate.Specifications;
 using BirdTournaments.SharedKernel.Interfaces;
 using BirdTournaments.Web.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -14,13 +16,16 @@ public class Me : EndpointBaseAsync
   .WithActionResult<MeResponse>
 {
 
-  private readonly ICurrentUserService _currentUserService;
-  private readonly IRepository<BirdOwner> _birdOwnerRepository;
 
-  public Me(ICurrentUserService currentUserService, IRepository<BirdOwner> birdOwnerRepository) 
+  private readonly IRepository<User> _userRepository; 
+
+
+  private readonly ICurrentUserService _currentUserService;
+
+  public Me(ICurrentUserService currentUserService, IRepository<User> userRepository) 
   {
     _currentUserService = currentUserService;
-    _birdOwnerRepository = birdOwnerRepository;
+    _userRepository = userRepository;
   }
 
 
@@ -33,24 +38,24 @@ public class Me : EndpointBaseAsync
     Tags = new[] { "Authen" }
     )
   ]
+
+
   public override async Task<ActionResult<MeResponse>> HandleAsync(CancellationToken cancellationToken = default)
   {
-    var birdOwnerId = _currentUserService.TryParseBirdOwnerId();
-
-    var birdOwnerSpec = new BirdOwnerWithBirdsById(birdOwnerId);
-    var birdOwner = await _birdOwnerRepository.FirstOrDefaultAsync(birdOwnerSpec);
-
-    if (birdOwner == null)
+    try
     {
-      return BadRequest("birdowner is null?");
+      var spec = new UserWithBirdOwnerAndBirdsByIdSpec(_currentUserService.TryParseUserId());
+      var user = await _userRepository.FirstOrDefaultAsync(spec, cancellationToken);
+
+      var userRecord = BaseUserRecord.FromEntity(user!);
+
+      var reponse = new MeResponse(userRecord);
+
+      return reponse;
     }
-
-    var birdRecords = birdOwner.Birds.Select(BirdRecord.FromEntity);
-    var birdOwnerRecord = BirdOwnerRecord.FromEntity(birdOwner);
-
-    var response = new MeResponse(birdRecords, birdOwnerRecord);
-
-
-    return Ok(response);
+    catch(Exception ex)
+    {
+      return StatusCode(500, ex.Message);
+    }
   }
 }

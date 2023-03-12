@@ -17,7 +17,7 @@ public class User : EntityBase, IAggregateRoot
 
   public UserRole Role { get; }
 
-  public BirdOwner BirdOwner { get; }
+  public BirdOwner BirdOwner { get; private set; }
 
   #pragma warning disable CS8618 // Required by Entity Framework
   private User() { }
@@ -41,5 +41,11 @@ public class User : EntityBase, IAggregateRoot
     Role = role;
   }
 
+  public void setBirdOwner(BirdOwner birdOwner)
+  {
+    Guard.Against.Null(birdOwner, nameof(birdOwner)); 
+
+    this.BirdOwner = birdOwner; 
+  }
 }
 

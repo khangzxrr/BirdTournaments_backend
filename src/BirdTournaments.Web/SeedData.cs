@@ -59,11 +59,11 @@ public static class SeedData
   public static readonly BirdType BirdType3 = new BirdType("Chào Mào");
 
   public static readonly User user1 = new User("khangzxrr", "khangzxrr@gmail.com", "4297f44b13955235245b2497399d7a93", "salt", UserVerify.actived, UserRole.player);
-  public static readonly BirdOwner birdOwner1 = new BirdOwner("mr khang vo", "149 xa lo ha noi p. thao dien, quan 2", "0919092211", "vipprozx!");
+  public static readonly BirdOwner birdOwner1 = new BirdOwner("mr khang vo", "149 xa lo ha noi p. thao dien, quan 2", "0919092211");
   public static readonly Bird bird1 = new Bird("Vàng anh pro vip", "https://picsum.photos/200/300", 500);
 
   public static readonly User user2 = new User("khangzxrr2", "khangzxrr2@gmail.com", "4297f44b13955235245b2497399d7a93", "salt", UserVerify.actived, UserRole.player);
-  public static readonly BirdOwner birdOwner2 = new BirdOwner("mr vo vo", "299 xa lo ha noi p. thao dien, quan 2", "0988111790", "vipprozx!");
+  public static readonly BirdOwner birdOwner2 = new BirdOwner("mr vo vo", "299 xa lo ha noi p. thao dien, quan 2", "0988111790");
   public static readonly Bird bird2 = new Bird("Sáo sậu sổ lồng", "https://picsum.photos/200/300", 1701);
 
   public static readonly User user3 = new User("admin", "khangzxrr3@gmail.com", "4297f44b13955235245b2497399d7a93", "salt", UserVerify.actived, UserRole.player);

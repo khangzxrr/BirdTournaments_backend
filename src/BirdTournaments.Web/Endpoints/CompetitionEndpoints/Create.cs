@@ -1,14 +1,8 @@
-﻿
-using BirdTournaments.SharedKernel.Interfaces;
-using Ardalis.ApiEndpoints;
+﻿using Ardalis.ApiEndpoints;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using BirdTournaments.Core.ParticipantAggregate;
 using BirdTournaments.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using BirdTournaments.Core.UserAggregate;
-using BirdTournaments.Core.BirdOwnerAggregate;
-using System.Security.Claims;
 using Ardalis.GuardClauses;
 using BirdTournaments.Web.Interfaces;
 

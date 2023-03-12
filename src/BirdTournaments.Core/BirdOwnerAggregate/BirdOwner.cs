@@ -10,7 +10,6 @@ public class BirdOwner : EntityBase, IAggregateRoot
   public string Name { get; }
   public string Address { get; }
   public string PhoneNumber { get; }
-  public string VipAccountId { get; }
 
   public int UserId;
 
@@ -33,13 +32,11 @@ public class BirdOwner : EntityBase, IAggregateRoot
   public BirdOwner(
     string name, 
     string address, 
-    string phoneNumber,
-    string vipAccountId) { 
+    string phoneNumber) { 
     Name = Guard.Against.NullOrEmpty(name, nameof(name));
     Address = Guard.Against.NullOrEmpty(address, nameof(address));
     PhoneNumber = Guard.Against.NullOrEmpty(phoneNumber, nameof(phoneNumber));
 
-    VipAccountId = vipAccountId;
     
   }
 

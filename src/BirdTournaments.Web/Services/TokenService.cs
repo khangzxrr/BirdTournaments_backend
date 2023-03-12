@@ -30,7 +30,8 @@ public class TokenService : ITokenService
     {
       new Claim(ClaimTypes.NameIdentifier,user.UserName),
       new Claim(ClaimTypes.Role, user.Role.Name),
-      new Claim("birdOwnerId", (user.BirdOwner == null) ? "" : user.BirdOwner.Id.ToString())
+      new Claim("birdOwnerId", (user.BirdOwner == null) ? "" : user.BirdOwner.Id.ToString()),
+      new Claim("userId", user.Id.ToString())
     };
 
     var token = new JwtSecurityToken(
