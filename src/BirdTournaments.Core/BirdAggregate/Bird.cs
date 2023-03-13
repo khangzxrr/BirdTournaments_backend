@@ -6,8 +6,8 @@ using BirdTournaments.SharedKernel.Interfaces;
 namespace BirdTournaments.Core.BirdAggregate;
 public class Bird : EntityBase, IAggregateRoot
 {
-  public string Name { get;  }
-  public string Image { get;  }
+  public string Name { get; private set; }
+  public string Image { get; private set; }
   public int Elo { get;  }
 
 
@@ -35,5 +35,15 @@ public class Bird : EntityBase, IAggregateRoot
   public void SetBirdType(BirdType birdType)
   {
     BirdType = Guard.Against.Null(birdType, nameof(birdType));    
+  }
+
+  public void SetName(string name)
+  {
+    this.Name = Guard.Against.NullOrEmpty(name, nameof(name));
+  }
+
+  public void SetImage(string image)
+  {
+    this.Image = Guard.Against.NullOrEmpty(image, nameof(Name));
   }
 }
